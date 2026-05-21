@@ -1,0 +1,7 @@
+name = "wizard-tattoo"
+compatibility_date = "2026-05-21"
+
+# Tells Cloudflare this is a plain static site and the files
+# (index.html etc.) live in the root of the repo. No build, no code.
+[assets]
+directory = "./"
