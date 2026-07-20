@@ -57,18 +57,24 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(ellipse at 8% 12%, rgba(46,233,228,.14), transparent 55%),
-    radial-gradient(ellipse at 88% 90%, rgba(74,30,117,.22), transparent 60%),
-    radial-gradient(ellipse at 70% 20%, rgba(247,168,58,.06), transparent 45%),
+    /* carved cuneiform tablet, repeating, extremely subtle */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220' fill='%232ee9e4' fill-opacity='0.055'%3E%3Cg%3E%3Cpolygon points='14,20 22,20 18,32'/%3E%3Cpolygon points='28,20 36,20 32,32'/%3E%3Cpolygon points='56,24 66,20 66,30'/%3E%3Cpolygon points='72,20 80,20 76,32'/%3E%3Cpolygon points='102,20 110,20 106,32'/%3E%3Cpolygon points='114,24 124,20 124,30'/%3E%3Cpolygon points='142,20 150,20 146,32'/%3E%3Cpolygon points='156,20 164,20 160,32'/%3E%3Cpolygon points='188,20 198,20 193,32' fill='%23f7a83a' fill-opacity='0.7'/%3E%3Cpolygon points='20,58 28,58 24,70'/%3E%3Cpolygon points='40,62 50,58 50,68'/%3E%3Cpolygon points='66,58 74,58 70,70'/%3E%3Cpolygon points='94,62 104,58 104,68'/%3E%3Cpolygon points='120,58 128,58 124,70'/%3E%3Cpolygon points='134,58 142,58 138,70'/%3E%3Cpolygon points='166,62 176,58 176,68'/%3E%3Cpolygon points='192,58 200,58 196,70'/%3E%3Cpolygon points='12,96 20,96 16,108'/%3E%3Cpolygon points='26,96 34,96 30,108'/%3E%3Cpolygon points='52,100 62,96 62,106'/%3E%3Cpolygon points='84,96 92,96 88,108'/%3E%3Cpolygon points='108,100 118,96 118,106'/%3E%3Cpolygon points='134,96 142,96 138,108' fill='%23f7a83a' fill-opacity='0.65'/%3E%3Cpolygon points='164,96 172,96 168,108'/%3E%3Cpolygon points='188,100 198,96 198,106'/%3E%3Cpolygon points='18,134 26,134 22,146'/%3E%3Cpolygon points='42,138 52,134 52,144'/%3E%3Cpolygon points='72,134 80,134 76,146'/%3E%3Cpolygon points='86,134 94,134 90,146'/%3E%3Cpolygon points='112,138 122,134 122,144'/%3E%3Cpolygon points='142,134 150,134 146,146'/%3E%3Cpolygon points='170,134 178,134 174,146'/%3E%3Cpolygon points='196,138 206,134 206,144'/%3E%3Cpolygon points='14,174 22,174 18,186'/%3E%3Cpolygon points='38,174 46,174 42,186'/%3E%3Cpolygon points='64,178 74,174 74,184'/%3E%3Cpolygon points='94,174 102,174 98,186'/%3E%3Cpolygon points='120,174 128,174 124,186'/%3E%3Cpolygon points='150,178 160,174 160,184'/%3E%3Cpolygon points='176,174 184,174 180,186' fill='%23f7a83a' fill-opacity='0.6'/%3E%3Cpolygon points='198,174 206,174 202,186'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 8% 12%, rgba(46,233,228,.16), transparent 55%),
+    radial-gradient(ellipse at 88% 90%, rgba(74,30,117,.28), transparent 60%),
+    radial-gradient(ellipse at 70% 20%, rgba(247,168,58,.07), transparent 45%),
     linear-gradient(180deg, #050308, #000);
 }
-/* stone-grain overlay */
-body::before{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.14;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.91  0 0 0 0 0.89  0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+/* coarse stone grain */
+body::before{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.22;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.91  0 0 0 0 0.89  0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   mix-blend-mode:screen}
-/* deep vignette */
+/* fine dust grain (second layer) */
+body .grain-fine{content:"";position:fixed;inset:0;z-index:9996;pointer-events:none;opacity:.12;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.4' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay}
+/* deep vignette + ember + violet corner tints */
 body::after{content:"";position:fixed;inset:0;z-index:9997;pointer-events:none;
-  box-shadow:inset 0 0 260px rgba(0,0,0,.9), inset 0 0 60px rgba(46,233,228,.05)}
+  box-shadow:inset 0 0 300px rgba(0,0,0,.92), inset 0 0 80px rgba(46,233,228,.06), inset 0 0 200px rgba(74,30,117,.08)}
 
 ::selection{background:var(--glow);color:var(--void)}
 ::-webkit-scrollbar{width:10px}
@@ -129,14 +135,29 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter
 .hero{padding:clamp(70px,10vw,140px) 0 clamp(70px,10vw,130px);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(circle at 50% 22%, rgba(46,233,228,.28), transparent 45%),
-    radial-gradient(circle at 15% 78%, rgba(74,30,117,.28), transparent 50%),
-    radial-gradient(circle at 85% 68%, rgba(247,168,58,.09), transparent 45%)}
-.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;
+    radial-gradient(circle at 50% 22%, rgba(46,233,228,.32), transparent 45%),
+    radial-gradient(circle at 12% 78%, rgba(74,30,117,.32), transparent 50%),
+    radial-gradient(circle at 88% 68%, rgba(247,168,58,.11), transparent 45%),
+    radial-gradient(circle at 88% 20%, rgba(46,233,228,.10), transparent 40%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.34;
   background-image:
-    repeating-linear-gradient(0deg, transparent 0 6px, rgba(46,233,228,.045) 6px 7px),
-    repeating-linear-gradient(90deg, transparent 0 6px, rgba(46,233,228,.045) 6px 7px);
+    repeating-linear-gradient(0deg, transparent 0 6px, rgba(46,233,228,.05) 6px 7px),
+    repeating-linear-gradient(90deg, transparent 0 6px, rgba(46,233,228,.05) 6px 7px);
   mask-image:radial-gradient(ellipse at center, black 30%, transparent 78%)}
+
+/* Stone-crack decorative overlay in hero corners */
+.cracks{position:absolute;pointer-events:none;color:var(--glow);opacity:.35;z-index:1;
+  filter:drop-shadow(0 0 8px rgba(46,233,228,.35))}
+.cracks svg{width:100%;height:auto;display:block}
+.cracks.tl{top:0;left:0;width:min(340px,42vw)}
+.cracks.br{bottom:0;right:0;width:min(380px,45vw);transform:scale(-1,-1)}
+
+/* Ancient glyph plate — big carved-tablet slab, decorative */
+.plate{position:absolute;pointer-events:none;opacity:.14;color:var(--glow);z-index:0;
+  filter:drop-shadow(0 0 8px rgba(46,233,228,.4))}
+.plate.left{top:22%;left:-40px;width:min(220px,22vw);transform:rotate(-6deg)}
+.plate.right{bottom:12%;right:-30px;width:min(240px,24vw);transform:rotate(4deg)}
+.plate svg{width:100%;height:auto;display:block}
 .tease{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
 
 /* Winged deity watermark behind the tease copy */
@@ -188,10 +209,21 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter
 
 .hero .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px}
 
+.release-line{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:.3em;font-size:.72rem;
+  color:var(--ash);margin-top:34px;display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  padding:10px 20px;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
+.release-line b{color:var(--ember);font-weight:700;letter-spacing:.24em;
+  text-shadow:0 0 12px rgba(247,168,58,.5)}
+.release-line .dot{display:inline-block;width:6px;height:6px;background:var(--ember);border-radius:50%;
+  box-shadow:0 0 10px var(--ember),0 0 20px rgba(247,168,58,.4)}
+
 /* ===================== FEATURED PLAYER ===================== */
-.player{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);position:relative}
+.player{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);position:relative;overflow:hidden}
 .player::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 78% 50%, rgba(46,233,228,.10), transparent 55%)}
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260' fill='%232ee9e4' fill-opacity='0.04'%3E%3Cpolygon points='16,20 24,20 20,32'/%3E%3Cpolygon points='34,20 42,20 38,32'/%3E%3Cpolygon points='68,24 78,20 78,30'/%3E%3Cpolygon points='104,20 112,20 108,32'/%3E%3Cpolygon points='140,24 150,20 150,30'/%3E%3Cpolygon points='176,20 184,20 180,32'/%3E%3Cpolygon points='216,20 224,20 220,32' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='24,70 32,70 28,82'/%3E%3Cpolygon points='58,74 68,70 68,80'/%3E%3Cpolygon points='94,70 102,70 98,82'/%3E%3Cpolygon points='134,74 144,70 144,80'/%3E%3Cpolygon points='170,70 178,70 174,82'/%3E%3Cpolygon points='204,70 212,70 208,82'/%3E%3Cpolygon points='14,120 22,120 18,132'/%3E%3Cpolygon points='52,124 62,120 62,130'/%3E%3Cpolygon points='88,120 96,120 92,132'/%3E%3Cpolygon points='128,120 136,120 132,132'/%3E%3Cpolygon points='166,124 176,120 176,130' fill='%23f7a83a' fill-opacity='0.45'/%3E%3Cpolygon points='200,120 208,120 204,132'/%3E%3Cpolygon points='234,120 242,120 238,132'/%3E%3Cpolygon points='22,170 30,170 26,182'/%3E%3Cpolygon points='60,170 68,170 64,182'/%3E%3Cpolygon points='96,174 106,170 106,180'/%3E%3Cpolygon points='132,170 140,170 136,182'/%3E%3Cpolygon points='172,170 180,170 176,182'/%3E%3Cpolygon points='208,174 218,170 218,180'/%3E%3Cpolygon points='14,220 22,220 18,232'/%3E%3Cpolygon points='48,224 58,220 58,230'/%3E%3Cpolygon points='84,220 92,220 88,232'/%3E%3Cpolygon points='124,220 132,220 128,232'/%3E%3Cpolygon points='162,224 172,220 172,230'/%3E%3Cpolygon points='200,220 208,220 204,232'/%3E%3Cpolygon points='236,220 244,220 240,232' fill='%23f7a83a' fill-opacity='0.45'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 78% 50%, rgba(46,233,228,.12), transparent 55%),
+    radial-gradient(ellipse at 22% 20%, rgba(74,30,117,.14), transparent 50%)}
 .player .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(30px,5vw,60px);align-items:center;position:relative;z-index:2}
 .player .kicker{margin-bottom:14px}
 .player h3{font-family:var(--display);text-transform:uppercase;color:var(--bone);font-size:clamp(1.9rem,4vw,3rem);
@@ -229,9 +261,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter
 .release:hover .listen::after{transform:translateX(6px)}
 
 /* ===================== ABOUT ===================== */
-.about{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);position:relative}
+.about{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);position:relative;overflow:hidden}
 .about::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 8% 100%, rgba(46,233,228,.09), transparent 55%)}
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='%232ee9e4' fill-opacity='0.045'%3E%3Cpolygon points='18,22 26,22 22,34'/%3E%3Cpolygon points='36,22 44,22 40,34'/%3E%3Cpolygon points='68,26 78,22 78,32'/%3E%3Cpolygon points='100,22 108,22 104,34'/%3E%3Cpolygon points='134,26 144,22 144,32'/%3E%3Cpolygon points='168,22 176,22 172,34'/%3E%3Cpolygon points='200,22 208,22 204,34' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='24,66 32,66 28,78'/%3E%3Cpolygon points='54,70 64,66 64,76'/%3E%3Cpolygon points='90,66 98,66 94,78'/%3E%3Cpolygon points='124,66 132,66 128,78'/%3E%3Cpolygon points='160,70 170,66 170,76'/%3E%3Cpolygon points='196,66 204,66 200,78'/%3E%3Cpolygon points='14,110 22,110 18,122'/%3E%3Cpolygon points='46,114 56,110 56,120'/%3E%3Cpolygon points='82,110 90,110 86,122'/%3E%3Cpolygon points='114,110 122,110 118,122' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='148,114 158,110 158,120'/%3E%3Cpolygon points='184,110 192,110 188,122'/%3E%3Cpolygon points='216,110 224,110 220,122'/%3E%3Cpolygon points='22,158 30,158 26,170'/%3E%3Cpolygon points='56,158 64,158 60,170'/%3E%3Cpolygon points='90,162 100,158 100,168'/%3E%3Cpolygon points='128,158 136,158 132,170'/%3E%3Cpolygon points='164,158 172,158 168,170'/%3E%3Cpolygon points='198,162 208,158 208,168'/%3E%3Cpolygon points='18,204 26,204 22,216'/%3E%3Cpolygon points='52,208 62,204 62,214'/%3E%3Cpolygon points='88,204 96,204 92,216'/%3E%3Cpolygon points='120,204 128,204 124,216'/%3E%3Cpolygon points='156,208 166,204 166,214' fill='%23f7a83a' fill-opacity='0.45'/%3E%3Cpolygon points='190,204 198,204 194,216'/%3E%3Cpolygon points='220,204 228,204 224,216'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 8% 100%, rgba(46,233,228,.11), transparent 55%),
+    radial-gradient(ellipse at 95% 15%, rgba(247,168,58,.05), transparent 45%)}
 .about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(30px,5vw,60px);align-items:start;position:relative;z-index:2}
 .origin{background:var(--stone);border:1px solid var(--edge);padding:0}
 .origin .obar{font-family:var(--serif);font-weight:600;background:transparent;color:var(--glow);padding:14px 22px;
@@ -274,9 +309,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter
 .clip:hover .go::after{transform:translate(3px,-3px)}
 
 /* ===================== LISTEN ===================== */
-.listen{background:var(--void);border-top:1px solid var(--edge);position:relative}
+.listen{background:var(--void);border-top:1px solid var(--edge);position:relative;overflow:hidden}
 .listen::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 100%, rgba(46,233,228,.10), transparent 60%)}
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200' fill='%232ee9e4' fill-opacity='0.05'%3E%3Cpolygon points='16,18 24,18 20,30'/%3E%3Cpolygon points='48,22 58,18 58,28'/%3E%3Cpolygon points='82,18 90,18 86,30'/%3E%3Cpolygon points='118,22 128,18 128,28'/%3E%3Cpolygon points='152,18 160,18 156,30' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='184,18 192,18 188,30'/%3E%3Cpolygon points='22,66 30,66 26,78'/%3E%3Cpolygon points='58,66 66,66 62,78'/%3E%3Cpolygon points='92,70 102,66 102,76'/%3E%3Cpolygon points='128,66 136,66 132,78'/%3E%3Cpolygon points='164,66 172,66 168,78'/%3E%3Cpolygon points='14,114 22,114 18,126'/%3E%3Cpolygon points='46,118 56,114 56,124'/%3E%3Cpolygon points='82,114 90,114 86,126'/%3E%3Cpolygon points='116,114 124,114 120,126'/%3E%3Cpolygon points='150,118 160,114 160,124'/%3E%3Cpolygon points='182,114 190,114 186,126' fill='%23f7a83a' fill-opacity='0.45'/%3E%3Cpolygon points='20,162 28,162 24,174'/%3E%3Cpolygon points='54,162 62,162 58,174'/%3E%3Cpolygon points='88,166 98,162 98,172'/%3E%3Cpolygon points='124,162 132,162 128,174'/%3E%3Cpolygon points='160,162 168,162 164,174'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 100%, rgba(46,233,228,.12), transparent 60%),
+    radial-gradient(ellipse at 15% 0%, rgba(74,30,117,.16), transparent 55%)}
 .platforms{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
 .platforms a{font-family:var(--serif);font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:.76rem;
   padding:14px 22px;background:transparent;color:var(--bone);border:1px solid var(--edge);text-decoration:none;transition:.2s;position:relative}
@@ -322,6 +360,7 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 </style>
 </head>
 <body id="top">
+<div class="grain-fine" aria-hidden="true"></div>
 
 <!-- ===================== TOP STRIP ===================== -->
 <div class="topstrip">
@@ -346,6 +385,81 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 
 <!-- ===================== HERO — COUNTDOWN TEASE ===================== -->
 <header class="hero">
+  <!-- Stone-crack overlays -->
+  <div class="cracks tl" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
+      <path d="M0,60 Q40,72 80,58 T160,48 T240,60 T320,52 T400,64" opacity=".7"/>
+      <path d="M-10,110 Q30,120 70,108 T150,115 T230,102 T310,110 T400,100" opacity=".55"/>
+      <path d="M40,0 L48,28 L38,60 L52,92 L42,130 L58,168 L44,210 L60,260" opacity=".55"/>
+      <path d="M180,0 L170,32 L184,66 L172,102 L188,140 L176,180" opacity=".45"/>
+      <path d="M320,0 L330,26 L316,54 L328,86 L318,118 L332,150" opacity=".5"/>
+      <path d="M80,58 L84,80 M120,52 L125,74 M200,55 L206,78 M260,62 L266,84 M340,58 L344,80" opacity=".4"/>
+      <path d="M0,220 Q40,232 88,224 T170,232 T250,220 T330,228 T400,220" opacity=".45"/>
+      <circle cx="48" cy="62" r="1.2" fill="currentColor"/>
+      <circle cx="170" cy="118" r="1.2" fill="currentColor"/>
+      <circle cx="280" cy="52" r="1.2" fill="currentColor"/>
+      <circle cx="330" cy="150" r="1.2" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="cracks br" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
+      <path d="M0,60 Q40,72 80,58 T160,48 T240,60 T320,52 T400,64" opacity=".7"/>
+      <path d="M-10,150 Q30,140 70,152 T150,145 T230,158 T310,150 T400,160" opacity=".55"/>
+      <path d="M40,0 L48,28 L38,60 L52,92 L42,130 L58,168 L44,210 L60,260" opacity=".55"/>
+      <path d="M220,0 L212,32 L226,66 L214,102 L228,140 L216,180 L230,220" opacity=".45"/>
+      <path d="M0,220 Q40,232 88,224 T170,232 T250,220 T330,228 T400,220" opacity=".5"/>
+      <circle cx="88" cy="52" r="1.2" fill="currentColor"/>
+      <circle cx="230" cy="140" r="1.2" fill="currentColor"/>
+      <circle cx="60" cy="200" r="1.2" fill="currentColor"/>
+    </svg>
+  </div>
+
+  <!-- Ancient carved-tablet plates on the sides -->
+  <div class="plate left" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 320" fill="none" stroke="currentColor" stroke-width="1">
+      <rect x="6" y="6" width="208" height="308" stroke-width="1.4"/>
+      <line x1="6" y1="46" x2="214" y2="46" opacity=".55"/>
+      <line x1="6" y1="86" x2="214" y2="86" opacity=".55"/>
+      <line x1="6" y1="126" x2="214" y2="126" opacity=".55"/>
+      <line x1="6" y1="166" x2="214" y2="166" opacity=".55"/>
+      <line x1="6" y1="206" x2="214" y2="206" opacity=".55"/>
+      <line x1="6" y1="246" x2="214" y2="246" opacity=".55"/>
+      <line x1="6" y1="286" x2="214" y2="286" opacity=".55"/>
+      <g fill="currentColor">
+        <polygon points="20,20 28,20 24,32"/><polygon points="36,20 44,20 40,32"/><polygon points="60,24 70,20 70,30"/><polygon points="88,20 96,20 92,32"/><polygon points="112,24 122,20 122,30"/><polygon points="144,20 152,20 148,32"/><polygon points="168,20 176,20 172,32"/><polygon points="196,20 204,20 200,32" fill="%23f7a83a" fill-opacity=".7"/>
+        <polygon points="20,60 28,60 24,72"/><polygon points="44,64 54,60 54,70"/><polygon points="72,60 80,60 76,72"/><polygon points="100,60 108,60 104,72"/><polygon points="124,64 134,60 134,70"/><polygon points="156,60 164,60 160,72"/><polygon points="184,60 192,60 188,72"/>
+        <polygon points="18,100 26,100 22,112"/><polygon points="40,100 48,100 44,112"/><polygon points="66,104 76,100 76,110"/><polygon points="98,100 106,100 102,112"/><polygon points="128,104 138,100 138,110"/><polygon points="160,100 168,100 164,112" fill="%23f7a83a" fill-opacity=".7"/><polygon points="188,100 196,100 192,112"/>
+        <polygon points="24,140 32,140 28,152"/><polygon points="50,144 60,140 60,150"/><polygon points="78,140 86,140 82,152"/><polygon points="108,140 116,140 112,152"/><polygon points="136,144 146,140 146,150"/><polygon points="168,140 176,140 172,152"/><polygon points="196,140 204,140 200,152"/>
+        <polygon points="20,180 28,180 24,192"/><polygon points="46,180 54,180 50,192"/><polygon points="72,184 82,180 82,190"/><polygon points="102,180 110,180 106,192"/><polygon points="128,180 136,180 132,192"/><polygon points="156,184 166,180 166,190"/><polygon points="188,180 196,180 192,192"/>
+        <polygon points="22,220 30,220 26,232"/><polygon points="48,220 56,220 52,232"/><polygon points="76,224 86,220 86,230"/><polygon points="106,220 114,220 110,232" fill="%23f7a83a" fill-opacity=".7"/><polygon points="134,220 142,220 138,232"/><polygon points="160,224 170,220 170,230"/><polygon points="192,220 200,220 196,232"/>
+        <polygon points="18,260 26,260 22,272"/><polygon points="42,260 50,260 46,272"/><polygon points="68,264 78,260 78,270"/><polygon points="98,260 106,260 102,272"/><polygon points="128,260 136,260 132,272"/><polygon points="158,264 168,260 168,270"/><polygon points="188,260 196,260 192,272"/>
+        <polygon points="24,300 32,300 28,312"/><polygon points="50,300 58,300 54,312"/><polygon points="78,304 88,300 88,310"/><polygon points="110,300 118,300 114,312"/><polygon points="140,300 148,300 144,312"/><polygon points="170,304 180,300 180,310" fill="%23f7a83a" fill-opacity=".7"/><polygon points="200,300 208,300 204,312"/>
+      </g>
+    </svg>
+  </div>
+  <div class="plate right" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 320" fill="none" stroke="currentColor" stroke-width="1">
+      <rect x="6" y="6" width="208" height="308" stroke-width="1.4"/>
+      <line x1="6" y1="46" x2="214" y2="46" opacity=".55"/>
+      <line x1="6" y1="86" x2="214" y2="86" opacity=".55"/>
+      <line x1="6" y1="126" x2="214" y2="126" opacity=".55"/>
+      <line x1="6" y1="166" x2="214" y2="166" opacity=".55"/>
+      <line x1="6" y1="206" x2="214" y2="206" opacity=".55"/>
+      <line x1="6" y1="246" x2="214" y2="246" opacity=".55"/>
+      <line x1="6" y1="286" x2="214" y2="286" opacity=".55"/>
+      <g fill="currentColor">
+        <polygon points="20,20 28,20 24,32" fill="%23f7a83a" fill-opacity=".7"/><polygon points="44,24 54,20 54,30"/><polygon points="76,20 84,20 80,32"/><polygon points="108,20 116,20 112,32"/><polygon points="136,24 146,20 146,30"/><polygon points="168,20 176,20 172,32"/><polygon points="196,20 204,20 200,32"/>
+        <polygon points="16,60 24,60 20,72"/><polygon points="40,60 48,60 44,72"/><polygon points="66,64 76,60 76,70"/><polygon points="96,60 104,60 100,72"/><polygon points="124,60 132,60 128,72"/><polygon points="152,64 162,60 162,70"/><polygon points="184,60 192,60 188,72"/>
+        <polygon points="22,100 30,100 26,112"/><polygon points="48,104 58,100 58,110"/><polygon points="78,100 86,100 82,112"/><polygon points="108,100 116,100 112,112"/><polygon points="136,100 144,100 140,112" fill="%23f7a83a" fill-opacity=".7"/><polygon points="164,104 174,100 174,110"/><polygon points="196,100 204,100 200,112"/>
+        <polygon points="18,140 26,140 22,152"/><polygon points="44,140 52,140 48,152"/><polygon points="70,144 80,140 80,150"/><polygon points="100,140 108,140 104,152"/><polygon points="128,140 136,140 132,152"/><polygon points="156,144 166,140 166,150"/><polygon points="188,140 196,140 192,152"/>
+        <polygon points="24,180 32,180 28,192"/><polygon points="50,180 58,180 54,192"/><polygon points="76,184 86,180 86,190"/><polygon points="106,180 114,180 110,192"/><polygon points="134,180 142,180 138,192"/><polygon points="164,184 174,180 174,190"/><polygon points="196,180 204,180 200,192" fill="%23f7a83a" fill-opacity=".7"/>
+        <polygon points="18,220 26,220 22,232"/><polygon points="42,220 50,220 46,232"/><polygon points="68,224 78,220 78,230"/><polygon points="98,220 106,220 102,232"/><polygon points="128,220 136,220 132,232"/><polygon points="158,224 168,220 168,230"/><polygon points="188,220 196,220 192,232"/>
+        <polygon points="22,260 30,260 26,272"/><polygon points="48,260 56,260 52,272"/><polygon points="74,264 84,260 84,270"/><polygon points="104,260 112,260 108,272" fill="%23f7a83a" fill-opacity=".7"/><polygon points="132,260 140,260 136,272"/><polygon points="160,264 170,260 170,270"/><polygon points="192,260 200,260 196,272"/>
+        <polygon points="18,300 26,300 22,312"/><polygon points="44,300 52,300 48,312"/><polygon points="70,304 80,300 80,310"/><polygon points="100,300 108,300 104,312"/><polygon points="130,300 138,300 134,312"/><polygon points="160,304 170,300 170,310"/><polygon points="192,300 200,300 196,312"/>
+      </g>
+    </svg>
+  </div>
+
   <!-- Winged deity watermark (echo of the cover, not the cover itself) -->
   <div class="angel-bg" aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -404,7 +518,7 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 
       <span class="kicker reveal">Incoming Transmission</span>
       <h1 class="reveal">The Next<br>Chapter</h1>
-      <p class="tagline reveal">A new record surfaces on <b>08 · 07 · 2026</b></p>
+      <p class="tagline reveal">The announcement arrives <b>08 · 07 · 2026</b></p>
 
       <!-- Glyph strip above countdown -->
       <div class="glyphs wide reveal" aria-hidden="true">
@@ -438,6 +552,12 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
         <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener" class="btn"><span>Follow on Bandcamp</span></a>
         <a href="#releases" class="btn ghost"><span>The Discography</span></a>
       </div>
+
+      <p class="release-line reveal">
+        <span class="dot"></span>
+        Full record arrives <b>10 · 02 · 2026</b>
+        <span class="dot"></span>
+      </p>
     </div>
   </div>
 </header>
@@ -677,6 +797,8 @@ function tick(){
   if(diff <= 0){
     cd.d.textContent = cd.h.textContent = cd.m.textContent = cd.s.textContent = '00';
     document.querySelector('.tease .tagline').innerHTML = '<b>The transmission has arrived.</b>';
+    const rl = document.querySelector('.release-line');
+    if(rl) rl.innerHTML = '<span class="dot"></span> Full record arrives <b>10 · 02 · 2026</b> <span class="dot"></span>';
     return;
   }
   const sec = Math.floor(diff/1000);
