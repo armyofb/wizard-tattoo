@@ -31,6 +31,12 @@
   --glow:#2ee9e4;
   --glow-dim:#178f8b;
   --glow-deep:#083f3e;
+  --glow-hot:#b4fff8;
+  --ember:#f7a83a;
+  --ember-dim:#8a5518;
+  --ember-deep:#3a1f04;
+  --violet:#4a1e75;
+  --violet-deep:#1a0c2a;
   --bone:#eaf7f7;
   --ash:#93a9aa;
   --ash-dim:#546869;
@@ -51,9 +57,10 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(ellipse at 12% 8%, rgba(46,233,228,.10), transparent 55%),
-    radial-gradient(ellipse at 90% 92%, rgba(46,233,228,.05), transparent 55%),
-    linear-gradient(180deg, #030506, #000);
+    radial-gradient(ellipse at 8% 12%, rgba(46,233,228,.14), transparent 55%),
+    radial-gradient(ellipse at 88% 90%, rgba(74,30,117,.22), transparent 60%),
+    radial-gradient(ellipse at 70% 20%, rgba(247,168,58,.06), transparent 45%),
+    linear-gradient(180deg, #050308, #000);
 }
 /* stone-grain overlay */
 body::before{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.14;
@@ -122,30 +129,47 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter
 .hero{padding:clamp(70px,10vw,140px) 0 clamp(70px,10vw,130px);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(circle at 18% 30%, rgba(46,233,228,.25), transparent 42%),
-    radial-gradient(circle at 82% 78%, rgba(46,233,228,.10), transparent 45%)}
+    radial-gradient(circle at 50% 22%, rgba(46,233,228,.28), transparent 45%),
+    radial-gradient(circle at 15% 78%, rgba(74,30,117,.28), transparent 50%),
+    radial-gradient(circle at 85% 68%, rgba(247,168,58,.09), transparent 45%)}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;
   background-image:
     repeating-linear-gradient(0deg, transparent 0 6px, rgba(46,233,228,.045) 6px 7px),
     repeating-linear-gradient(90deg, transparent 0 6px, rgba(46,233,228,.045) 6px 7px);
   mask-image:radial-gradient(ellipse at center, black 30%, transparent 78%)}
 .tease{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
-.sigil{width:64px;height:64px;margin:0 auto 22px;position:relative;opacity:.9}
-.sigil::before,.sigil::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  border:1px solid var(--glow);opacity:.85}
-.sigil::before{width:60px;height:60px;transform:translate(-50%,-50%) rotate(45deg);box-shadow:0 0 22px rgba(46,233,228,.5)}
-.sigil::after{width:14px;height:14px;background:var(--glow);border-radius:50%;box-shadow:0 0 24px var(--glow),0 0 48px rgba(46,233,228,.5)}
+
+/* Winged deity watermark behind the tease copy */
+.angel-bg{position:absolute;top:2%;left:50%;transform:translateX(-50%);width:min(820px,96vw);
+  color:var(--glow);pointer-events:none;opacity:.13;z-index:1;
+  filter:drop-shadow(0 0 26px rgba(46,233,228,.55));animation:angel-breathe 7s ease-in-out infinite}
+.angel-bg svg{width:100%;height:auto;display:block}
+@keyframes angel-breathe{
+  0%,100%{opacity:.11;filter:drop-shadow(0 0 18px rgba(46,233,228,.45))}
+  50%{opacity:.17;filter:drop-shadow(0 0 40px rgba(46,233,228,.75)) drop-shadow(0 0 70px rgba(74,30,117,.4))}
+}
+
+/* Cuneiform glyph strips (top mark + countdown flankers) */
+.glyphs{display:block;width:100%;max-width:360px;margin:0 auto 22px;color:var(--glow);opacity:.85;
+  filter:drop-shadow(0 0 6px rgba(46,233,228,.55))}
+.glyphs.wide{max-width:520px}
+.glyphs.tight{margin:0 auto 14px;max-width:280px}
+.glyphs svg{width:100%;height:auto;display:block}
 .tease .kicker{color:var(--glow);margin-bottom:26px}
 .tease h1{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.82;letter-spacing:.01em;
-  font-size:clamp(3.4rem,11vw,7.2rem);color:var(--bone);margin:0 0 22px;
-  text-shadow:0 0 42px rgba(46,233,228,.4),0 0 6px rgba(46,233,228,.6)}
+  font-size:clamp(3.4rem,11vw,7.2rem);color:var(--bone);margin:0 0 22px;position:relative;z-index:2;
+  text-shadow:0 0 42px rgba(46,233,228,.55),0 0 8px rgba(46,233,228,.75),0 2px 0 rgba(247,168,58,.18)}
 .tease .tagline{font-family:var(--serif);font-weight:400;letter-spacing:.3em;text-transform:uppercase;
   font-size:clamp(.78rem,1.4vw,.95rem);color:var(--ash);margin:0 auto 42px;max-width:620px}
 .tease .tagline b{color:var(--glow);font-weight:600;letter-spacing:.32em}
 
 .countdown{display:inline-flex;align-items:flex-start;gap:clamp(6px,1.6vw,18px);margin:0 auto 44px;
-  padding:26px clamp(18px,3vw,38px);border:1px solid var(--edge);background:rgba(6,10,11,.55);
-  position:relative;box-shadow:0 0 60px rgba(46,233,228,.08), inset 0 0 40px rgba(46,233,228,.04)}
+  padding:26px clamp(18px,3vw,38px);border:1px solid var(--edge);background:rgba(6,10,11,.62);
+  position:relative;animation:cd-pulse 5s ease-in-out infinite}
+@keyframes cd-pulse{
+  0%,100%{box-shadow:0 0 50px rgba(46,233,228,.10), inset 0 0 40px rgba(46,233,228,.04)}
+  50%{box-shadow:0 0 90px rgba(46,233,228,.22), inset 0 0 55px rgba(46,233,228,.08), 0 0 40px rgba(247,168,58,.12)}
+}
 .countdown::before,.countdown::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--glow);opacity:.85}
 .countdown::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
 .countdown::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
@@ -155,7 +179,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter
 .countdown .lbl{font-family:var(--serif);font-weight:600;letter-spacing:.28em;text-transform:uppercase;
   font-size:.62rem;color:var(--glow-dim);margin-top:10px}
 .countdown .sep{font-family:var(--mono);font-weight:700;font-size:clamp(2.2rem,7vw,4.4rem);line-height:1;
-  color:var(--glow);opacity:.7;text-shadow:0 0 18px rgba(46,233,228,.7);padding:0 2px}
+  color:var(--ember);opacity:.9;text-shadow:0 0 20px rgba(247,168,58,.7),0 0 40px rgba(247,168,58,.3);padding:0 2px;
+  animation:sep-flick 3s ease-in-out infinite}
+@keyframes sep-flick{
+  0%,45%,55%,100%{opacity:.9}
+  50%{opacity:.55}
+}
 
 .hero .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px}
 
@@ -172,6 +201,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter
 .player .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .player .tags span{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.66rem;letter-spacing:.22em;
   color:var(--glow);border:1px solid var(--glow-dim);padding:6px 12px}
+.player .tags span:nth-child(2){color:var(--ember);border-color:var(--ember-dim);box-shadow:0 0 12px rgba(247,168,58,.15)}
 .embed-box{background:var(--stone);border:1px solid var(--edge);position:relative;padding:6px}
 .embed-box::before{content:"";position:absolute;inset:-1px;border:1px solid var(--glow);opacity:.35;pointer-events:none}
 .embed-box iframe{display:block;filter:hue-rotate(150deg) saturate(.9)}
@@ -316,12 +346,83 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 
 <!-- ===================== HERO — COUNTDOWN TEASE ===================== -->
 <header class="hero">
+  <!-- Winged deity watermark (echo of the cover, not the cover itself) -->
+  <div class="angel-bg" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke-width="1.2">
+        <!-- Halo / sun disc -->
+        <circle cx="400" cy="150" r="34" stroke-width="1.4"/>
+        <circle cx="400" cy="150" r="48" opacity=".35"/>
+        <circle cx="400" cy="150" r="16" fill="currentColor" opacity=".55"/>
+        <path d="M400,116 L400,100 M366,150 L350,150 M434,150 L450,150 M377,127 L367,117 M423,127 L433,117 M377,173 L367,183 M423,173 L433,183" opacity=".7"/>
+        <!-- Face -->
+        <line x1="392" y1="146" x2="392" y2="154"/>
+        <line x1="408" y1="146" x2="408" y2="154"/>
+        <path d="M394,162 Q400,166 406,162"/>
+        <!-- Left wing arches -->
+        <path d="M400,200 C355,190 285,165 205,145 C170,145 135,158 100,180" stroke-width="1.4"/>
+        <path d="M400,205 C360,215 285,225 205,225 C170,225 135,238 100,255" stroke-width="1.2"/>
+        <path d="M400,215 C355,230 305,255 265,285" stroke-width="1.1"/>
+        <!-- Left wing feathers -->
+        <path d="M115,182 L125,160 M148,172 L157,148 M182,162 L192,138 M216,155 L226,131 M250,150 L260,126 M284,148 L294,124 M318,150 L328,126 M352,156 L360,134 M382,170 L388,152"/>
+        <path d="M118,240 L128,220 M152,230 L162,210 M186,225 L196,205 M220,220 L230,200 M254,220 L264,200 M288,225 L298,205 M322,232 L332,212 M356,240 L366,220"/>
+        <path d="M180,278 L188,262 M215,270 L223,254 M250,266 L258,250 M285,268 L293,252 M320,272 L328,256 M355,278 L363,262"/>
+        <!-- Right wing arches -->
+        <path d="M400,200 C445,190 515,165 595,145 C630,145 665,158 700,180" stroke-width="1.4"/>
+        <path d="M400,205 C440,215 515,225 595,225 C630,225 665,238 700,255" stroke-width="1.2"/>
+        <path d="M400,215 C445,230 495,255 535,285" stroke-width="1.1"/>
+        <!-- Right wing feathers -->
+        <path d="M685,182 L675,160 M652,172 L643,148 M618,162 L608,138 M584,155 L574,131 M550,150 L540,126 M516,148 L506,124 M482,150 L472,126 M448,156 L440,134 M418,170 L412,152"/>
+        <path d="M682,240 L672,220 M648,230 L638,210 M614,225 L604,205 M580,220 L570,200 M546,220 L536,200 M512,225 L502,205 M478,232 L468,212 M444,240 L434,220"/>
+        <path d="M620,278 L612,262 M585,270 L577,254 M550,266 L542,250 M515,268 L507,252 M480,272 L472,256 M445,278 L437,262"/>
+        <!-- Body / robe -->
+        <path d="M400,205 L370,320 L400,410 L430,320 Z" stroke-width="1.3"/>
+        <path d="M370,320 L338,395 L358,415 M430,320 L462,395 L442,415"/>
+        <line x1="400" y1="205" x2="400" y2="410" opacity=".5"/>
+        <path d="M382,247 L418,247 M378,275 L422,275 M374,305 L426,305 M370,338 L430,338" opacity=".7"/>
+        <path d="M395,410 L385,438 M405,410 L415,438"/>
+        <!-- Hands -->
+        <path d="M358,298 L340,315 M442,298 L460,315" opacity=".85"/>
+      </g>
+    </svg>
+  </div>
+
   <div class="wrap">
     <div class="tease">
-      <div class="sigil reveal" aria-hidden="true"></div>
+      <!-- Top glyph strip in place of the old diamond sigil -->
+      <div class="glyphs tight reveal" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 22" fill="currentColor">
+          <polygon points="10,3 17,3 13.5,13"/><polygon points="21,3 28,3 24.5,13"/>
+          <polygon points="45,7 52,3 52,11"/><polygon points="58,3 65,3 61.5,13"/>
+          <polygon points="82,3 89,3 85.5,13"/><polygon points="93,3 100,3 96.5,13"/><polygon points="87,15 94,15 90.5,21"/>
+          <polygon points="122,3 129,3 125.5,13" fill="#f7a83a"/><polygon points="133,7 140,3 140,11" fill="#f7a83a"/>
+          <polygon points="162,3 169,3 165.5,13"/><polygon points="173,3 180,3 176.5,13"/>
+          <polygon points="202,7 209,3 209,11"/><polygon points="215,3 222,3 218.5,13"/><polygon points="210,15 217,15 213.5,21"/>
+          <polygon points="245,3 252,3 248.5,13"/><polygon points="256,7 263,3 263,11"/>
+        </svg>
+      </div>
+
       <span class="kicker reveal">Incoming Transmission</span>
       <h1 class="reveal">The Next<br>Chapter</h1>
       <p class="tagline reveal">A new record surfaces on <b>08 · 07 · 2026</b></p>
+
+      <!-- Glyph strip above countdown -->
+      <div class="glyphs wide reveal" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 22" fill="currentColor">
+          <polygon points="10,3 17,3 13.5,13"/><polygon points="21,3 28,3 24.5,13"/>
+          <polygon points="45,7 52,3 52,11"/><polygon points="58,3 65,3 61.5,13"/><polygon points="52,15 59,15 55.5,21"/>
+          <polygon points="90,3 97,3 93.5,13"/><polygon points="101,3 108,3 104.5,13"/><polygon points="112,3 119,3 115.5,13"/>
+          <polygon points="140,7 147,3 147,11"/><polygon points="153,7 160,3 160,11"/>
+          <polygon points="182,3 189,3 185.5,13" fill="#f7a83a"/><polygon points="193,3 200,3 196.5,13" fill="#f7a83a"/><polygon points="187,15 194,15 190.5,21" fill="#f7a83a"/>
+          <polygon points="228,3 235,3 231.5,13"/><polygon points="239,7 246,3 246,11"/>
+          <polygon points="270,3 277,3 273.5,13"/><polygon points="281,3 288,3 284.5,13"/>
+          <polygon points="312,7 319,3 319,11"/><polygon points="325,3 332,3 328.5,13"/><polygon points="320,15 327,15 323.5,21"/>
+          <polygon points="358,3 365,3 361.5,13"/><polygon points="369,3 376,3 372.5,13"/>
+          <polygon points="398,7 405,3 405,11"/><polygon points="411,3 418,3 414.5,13"/>
+          <polygon points="442,3 449,3 445.5,13" fill="#f7a83a"/><polygon points="453,7 460,3 460,11" fill="#f7a83a"/>
+          <polygon points="482,3 489,3 485.5,13"/><polygon points="493,3 500,3 496.5,13"/><polygon points="487,15 494,15 490.5,21"/>
+        </svg>
+      </div>
 
       <div class="countdown reveal" id="countdown" role="timer" aria-live="polite" aria-label="Time until announcement">
         <div class="unit"><span class="num" data-cd="d">--</span><span class="lbl">Days</span></div>
