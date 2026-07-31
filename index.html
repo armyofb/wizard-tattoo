@@ -12,7 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400;600;900&family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 /* ===================================================================
@@ -25,18 +25,20 @@
 :root{
   --void:#000000;
   --void-2:#050708;
-  --stone:#0d1113;
-  --stone-2:#161c1e;
+  --stone:#0c1012;
+  --stone-2:#141a1c;
   --edge:#212a2c;
   --edge-hi:#3b5457;
-  --cyan:#3ceeea;
+  --cyan:#35e1de;
   --cyan-dim:#158f8c;
   --cyan-deep:#0a3f3e;
-  --cyan-hot:#c2fff9;
-  --bone:#f2f7f7;
-  --ash:#8fa4a5;
+  --cyan-hot:#b5fbf6;
+  --bone:#ebe9df;
+  --bone-hi:#f7f4e8;
+  --ash:#8ea1a0;
   --ash-dim:#546366;
   --display:'Anton', 'Bebas Neue', Impact, sans-serif;
+  --serif:'Cinzel', 'Trajan Pro', Georgia, serif;
   --sans:'Inter', system-ui, sans-serif;
   --body:'Newsreader', Georgia, serif;
   --mono:'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace;
@@ -59,7 +61,7 @@ body::before{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   mix-blend-mode:overlay}
 body::after{content:"";position:fixed;inset:0;z-index:9997;pointer-events:none;
-  box-shadow:inset 0 0 240px rgba(0,0,0,.85)}
+  box-shadow:inset 0 0 320px rgba(0,0,0,.94), inset 0 0 100px rgba(0,0,0,.55)}
 
 ::selection{background:var(--cyan);color:var(--void)}
 ::-webkit-scrollbar{width:8px}
@@ -78,8 +80,13 @@ section{position:relative;padding:clamp(70px,10vw,140px) 0;scroll-margin-top:110
 .eyebrow.center{justify-content:center}
 .eyebrow.center::after{content:"";width:32px;height:1px;background:var(--cyan);opacity:.7}
 
-h2.sect{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.005em;
-  font-size:clamp(2.6rem,7.6vw,5rem);line-height:.88;color:var(--bone);margin-top:14px}
+h2.sect{font-family:var(--serif);font-weight:900;text-transform:uppercase;letter-spacing:.04em;
+  font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.02;color:var(--bone-hi);margin-top:16px}
+.head.center{text-align:center;display:flex;flex-direction:column;align-items:center}
+.head .rule-orn{display:inline-flex;align-items:center;gap:14px;color:var(--cyan);opacity:.7}
+.head .rule-orn.top{margin-bottom:20px}
+.head .rule-orn::before,.head .rule-orn::after{content:"";width:52px;height:1px;background:currentColor}
+.head .rule-orn span{width:5px;height:5px;background:currentColor;border-radius:50%;box-shadow:0 0 8px currentColor}
 
 .btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;letter-spacing:.22em;
   text-transform:uppercase;font-size:.72rem;padding:15px 26px;background:var(--cyan);color:var(--void);
@@ -121,15 +128,24 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.86);backdrop-filter
     radial-gradient(ellipse 80% 30% at 50% 100%, rgba(60,238,234,.10), transparent 70%)}
 .tease{position:relative;z-index:2;width:100%;text-align:center;max-width:1100px;margin:0 auto}
 
-.tease .eyebrow{margin-bottom:44px}
+.tease .eyebrow{margin-bottom:32px}
 
-.tease h1{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.86;letter-spacing:-.01em;
-  font-size:clamp(3.2rem,10vw,6.4rem);color:var(--bone);margin:0 auto 22px;max-width:14ch}
-.tease h1 em{font-style:normal;color:var(--cyan)}
+/* Ceremonial sigil — sole ornamental anchor of the hero */
+.sigil{width:min(240px,52vw);height:auto;margin:0 auto 30px;color:var(--cyan);display:block;
+  filter:drop-shadow(0 0 14px rgba(53,225,222,.35));animation:sigil-glow 6s ease-in-out infinite}
+.sigil svg{width:100%;height:auto;display:block}
+@keyframes sigil-glow{
+  0%,100%{filter:drop-shadow(0 0 12px rgba(53,225,222,.3))}
+  50%{filter:drop-shadow(0 0 28px rgba(53,225,222,.65)) drop-shadow(0 0 48px rgba(53,225,222,.22))}
+}
 
-.tease .lede{font-family:var(--body);font-weight:300;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--ash);
-  max-width:36ch;margin:0 auto 60px;line-height:1.5}
-.tease .lede em{color:var(--bone);font-style:normal;font-weight:400}
+.tease h1{font-family:var(--serif);font-weight:900;text-transform:uppercase;line-height:1.02;letter-spacing:.04em;
+  font-size:clamp(2.4rem,6.8vw,4.6rem);color:var(--bone-hi);margin:0 auto 26px;max-width:18ch}
+.tease h1 em{font-style:normal;color:var(--cyan);text-shadow:0 0 22px rgba(53,225,222,.4)}
+
+.tease .lede{font-family:var(--body);font-style:italic;font-weight:400;font-size:clamp(1.05rem,1.55vw,1.28rem);
+  color:var(--ash);max-width:42ch;margin:0 auto 60px;line-height:1.6}
+.tease .lede em{color:var(--bone);font-style:italic;font-weight:500;letter-spacing:.02em}
 
 /* Countdown */
 .countdown{display:inline-flex;align-items:flex-end;gap:clamp(10px,2.4vw,32px);margin:0 auto 44px;position:relative}
@@ -300,6 +316,93 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
 <header class="hero">
   <div class="wrap">
     <div class="tease">
+      <!-- Ceremonial sigil: concentric rings, perimeter ticks, wedge marks, open palm w/ eye at center -->
+      <div class="sigil reveal" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <g stroke-width="1">
+            <!-- Outer rings -->
+            <circle cx="200" cy="200" r="192" stroke-width="1.4"/>
+            <circle cx="200" cy="200" r="184" opacity=".4"/>
+
+            <!-- 24 perimeter ticks — cardinals larger -->
+            <g>
+              <line x1="200" y1="10" x2="200" y2="26" stroke-width="1.5"/>
+              <line x1="200" y1="374" x2="200" y2="390" stroke-width="1.5"/>
+              <line x1="10" y1="200" x2="26" y2="200" stroke-width="1.5"/>
+              <line x1="374" y1="200" x2="390" y2="200" stroke-width="1.5"/>
+              <g transform="rotate(15 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(30 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(45 200 200)"><line x1="200" y1="10" x2="200" y2="26" stroke-width="1.2"/></g>
+              <g transform="rotate(60 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(75 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(105 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(120 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(135 200 200)"><line x1="200" y1="10" x2="200" y2="26" stroke-width="1.2"/></g>
+              <g transform="rotate(150 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(165 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(195 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(210 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(225 200 200)"><line x1="200" y1="10" x2="200" y2="26" stroke-width="1.2"/></g>
+              <g transform="rotate(240 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(255 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(285 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(300 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(315 200 200)"><line x1="200" y1="10" x2="200" y2="26" stroke-width="1.2"/></g>
+              <g transform="rotate(330 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+              <g transform="rotate(345 200 200)"><line x1="200" y1="12" x2="200" y2="24"/></g>
+            </g>
+
+            <!-- Middle ring -->
+            <circle cx="200" cy="200" r="150" stroke-width="1.1"/>
+
+            <!-- Wedge marks between middle and inner rings, at 8 positions -->
+            <g fill="currentColor" opacity=".8" stroke="none">
+              <polygon points="200,60 206,72 194,72"/>
+              <polygon points="322,105 310,110 318,120"/>
+              <polygon points="340,200 328,195 328,205"/>
+              <polygon points="322,295 318,282 310,290"/>
+              <polygon points="200,340 194,328 206,328"/>
+              <polygon points="78,295 90,290 82,282"/>
+              <polygon points="60,200 72,195 72,205"/>
+              <polygon points="78,105 82,120 90,110"/>
+            </g>
+
+            <!-- Faint cross hairs (only between rings) -->
+            <g opacity=".28" stroke-width=".7">
+              <line x1="200" y1="60" x2="200" y2="110"/>
+              <line x1="200" y1="290" x2="200" y2="340"/>
+              <line x1="60" y1="200" x2="110" y2="200"/>
+              <line x1="290" y1="200" x2="340" y2="200"/>
+            </g>
+
+            <!-- Inner ring (thicker, hosts the central icon) -->
+            <circle cx="200" cy="200" r="92" stroke-width="1.3"/>
+            <circle cx="200" cy="200" r="84" opacity=".35"/>
+
+            <!-- Central icon: stylized open palm with an eye -->
+            <g transform="translate(200,206)" stroke-width="1.3">
+              <!-- Four fingers -->
+              <rect x="-24" y="-60" width="7" height="30" rx="3.5"/>
+              <rect x="-13" y="-68" width="7" height="38" rx="3.5"/>
+              <rect x="-2" y="-70" width="7" height="40" rx="3.5"/>
+              <rect x="9" y="-64" width="7" height="34" rx="3.5"/>
+              <!-- Palm -->
+              <path d="M-28,-30 L28,-30 L28,28 Q28,42 15,42 L-15,42 Q-28,42 -28,28 Z"/>
+              <!-- Thumb -->
+              <path d="M-28,-15 Q-42,-11 -42,3 Q-40,17 -28,15"/>
+              <!-- Eye in center of palm -->
+              <ellipse cx="0" cy="4" rx="14" ry="7" stroke-width="1.1"/>
+              <circle cx="0" cy="4" r="3.6" fill="currentColor"/>
+              <!-- Palm lines -->
+              <path d="M-15,22 Q-7,18 0,20 Q9,22 17,18" opacity=".55"/>
+            </g>
+
+            <!-- True center beacon -->
+            <circle cx="200" cy="200" r="1.6" fill="currentColor"/>
+          </g>
+        </svg>
+      </div>
+
       <span class="eyebrow center reveal">Transmission · Incoming</span>
 
       <h1 class="reveal">The next <em>chapter</em> arrives</h1>
@@ -348,8 +451,9 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
 <!-- ===================== DISCOGRAPHY ===================== -->
 <section id="releases">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow">The Back Catalog</span>
+    <div class="head center reveal">
+      <span class="rule-orn top" aria-hidden="true"><span></span></span>
+      <span class="eyebrow center">The Back Catalog</span>
       <h2 class="sect">Discography</h2>
     </div>
     <div class="disco-grid" id="discoGrid"><!-- injected from RELEASES[] --></div>
@@ -359,8 +463,9 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
 <!-- ===================== ABOUT ===================== -->
 <section class="about" id="about">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow">The Bard</span>
+    <div class="head center reveal">
+      <span class="rule-orn top" aria-hidden="true"><span></span></span>
+      <span class="eyebrow center">The Bard</span>
       <h2 class="sect">One man, one studio, total control.</h2>
     </div>
     <div class="about-grid">
@@ -389,8 +494,9 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
 <!-- ===================== PRESS ===================== -->
 <section id="press">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow">Read All About It</span>
+    <div class="head center reveal">
+      <span class="rule-orn top" aria-hidden="true"><span></span></span>
+      <span class="eyebrow center">Read All About It</span>
       <h2 class="sect">Press</h2>
     </div>
 
@@ -405,8 +511,9 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
 <!-- ===================== LISTEN ===================== -->
 <section class="listen" id="listen">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow">Press Play</span>
+    <div class="head center reveal">
+      <span class="rule-orn top" aria-hidden="true"><span></span></span>
+      <span class="eyebrow center">Press Play</span>
       <h2 class="sect">Listen Up</h2>
     </div>
     <div class="platforms reveal">
