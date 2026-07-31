@@ -12,361 +12,274 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400;600;800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 /* ===================================================================
    WIZARD TATTOO — single-file site
-   Aesthetic: deep void black, cyan/turquoise glow, grainy stone,
-   carved-inscription typography. Ancient and mystical — sound leaking
-   from a broken tablet. Cover art (kept off the page) is the compass.
+   Aesthetic: cinematic minimalism. Deep void, single cyan hue, bone
+   typography, monumental scale. Nothing decorative that isn't earning
+   its place. Countdown teaser as the visual anchor.
    =================================================================== */
 
 :root{
   --void:#000000;
-  --void-2:#06090a;
-  --stone:#0c1214;
-  --stone-2:#141c1f;
-  --edge:#1c2a2c;
-  --glow:#2ee9e4;
-  --glow-dim:#178f8b;
-  --glow-deep:#083f3e;
-  --glow-hot:#b4fff8;
-  --ember:#f7a83a;
-  --ember-dim:#8a5518;
-  --ember-deep:#3a1f04;
-  --violet:#4a1e75;
-  --violet-deep:#1a0c2a;
-  --bone:#eaf7f7;
-  --ash:#93a9aa;
-  --ash-dim:#546869;
-  --display:'Anton', Impact, sans-serif;
-  --serif:'Cinzel', 'Trajan Pro', Georgia, serif;
+  --void-2:#050708;
+  --stone:#0d1113;
+  --stone-2:#161c1e;
+  --edge:#212a2c;
+  --edge-hi:#3b5457;
+  --cyan:#3ceeea;
+  --cyan-dim:#158f8c;
+  --cyan-deep:#0a3f3e;
+  --cyan-hot:#c2fff9;
+  --bone:#f2f7f7;
+  --ash:#8fa4a5;
+  --ash-dim:#546366;
+  --display:'Anton', 'Bebas Neue', Impact, sans-serif;
+  --sans:'Inter', system-ui, sans-serif;
   --body:'Newsreader', Georgia, serif;
-  --mono:'JetBrains Mono', 'Courier New', monospace;
+  --mono:'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:#000}
 body{
   background:var(--void);
   color:var(--bone);
   font-family:var(--body);
-  font-size:18px;
-  line-height:1.6;
+  font-size:17px;
+  line-height:1.65;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
-  background-image:
-    /* carved cuneiform tablet, repeating, extremely subtle */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220' fill='%232ee9e4' fill-opacity='0.055'%3E%3Cg%3E%3Cpolygon points='14,20 22,20 18,32'/%3E%3Cpolygon points='28,20 36,20 32,32'/%3E%3Cpolygon points='56,24 66,20 66,30'/%3E%3Cpolygon points='72,20 80,20 76,32'/%3E%3Cpolygon points='102,20 110,20 106,32'/%3E%3Cpolygon points='114,24 124,20 124,30'/%3E%3Cpolygon points='142,20 150,20 146,32'/%3E%3Cpolygon points='156,20 164,20 160,32'/%3E%3Cpolygon points='188,20 198,20 193,32' fill='%23f7a83a' fill-opacity='0.7'/%3E%3Cpolygon points='20,58 28,58 24,70'/%3E%3Cpolygon points='40,62 50,58 50,68'/%3E%3Cpolygon points='66,58 74,58 70,70'/%3E%3Cpolygon points='94,62 104,58 104,68'/%3E%3Cpolygon points='120,58 128,58 124,70'/%3E%3Cpolygon points='134,58 142,58 138,70'/%3E%3Cpolygon points='166,62 176,58 176,68'/%3E%3Cpolygon points='192,58 200,58 196,70'/%3E%3Cpolygon points='12,96 20,96 16,108'/%3E%3Cpolygon points='26,96 34,96 30,108'/%3E%3Cpolygon points='52,100 62,96 62,106'/%3E%3Cpolygon points='84,96 92,96 88,108'/%3E%3Cpolygon points='108,100 118,96 118,106'/%3E%3Cpolygon points='134,96 142,96 138,108' fill='%23f7a83a' fill-opacity='0.65'/%3E%3Cpolygon points='164,96 172,96 168,108'/%3E%3Cpolygon points='188,100 198,96 198,106'/%3E%3Cpolygon points='18,134 26,134 22,146'/%3E%3Cpolygon points='42,138 52,134 52,144'/%3E%3Cpolygon points='72,134 80,134 76,146'/%3E%3Cpolygon points='86,134 94,134 90,146'/%3E%3Cpolygon points='112,138 122,134 122,144'/%3E%3Cpolygon points='142,134 150,134 146,146'/%3E%3Cpolygon points='170,134 178,134 174,146'/%3E%3Cpolygon points='196,138 206,134 206,144'/%3E%3Cpolygon points='14,174 22,174 18,186'/%3E%3Cpolygon points='38,174 46,174 42,186'/%3E%3Cpolygon points='64,178 74,174 74,184'/%3E%3Cpolygon points='94,174 102,174 98,186'/%3E%3Cpolygon points='120,174 128,174 124,186'/%3E%3Cpolygon points='150,178 160,174 160,184'/%3E%3Cpolygon points='176,174 184,174 180,186' fill='%23f7a83a' fill-opacity='0.6'/%3E%3Cpolygon points='198,174 206,174 202,186'/%3E%3C/g%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 8% 12%, rgba(46,233,228,.16), transparent 55%),
-    radial-gradient(ellipse at 88% 90%, rgba(74,30,117,.28), transparent 60%),
-    radial-gradient(ellipse at 70% 20%, rgba(247,168,58,.07), transparent 45%),
-    linear-gradient(180deg, #050308, #000);
+  text-rendering:optimizeLegibility;
 }
-/* coarse stone grain */
-body::before{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.22;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.91  0 0 0 0 0.89  0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  mix-blend-mode:screen}
-/* fine dust grain (second layer) */
-body .grain-fine{content:"";position:fixed;inset:0;z-index:9996;pointer-events:none;opacity:.12;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.4' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+/* single subtle grain, nothing else */
+body::before{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   mix-blend-mode:overlay}
-/* deep vignette + ember + violet corner tints */
 body::after{content:"";position:fixed;inset:0;z-index:9997;pointer-events:none;
-  box-shadow:inset 0 0 300px rgba(0,0,0,.92), inset 0 0 80px rgba(46,233,228,.06), inset 0 0 200px rgba(74,30,117,.08)}
+  box-shadow:inset 0 0 240px rgba(0,0,0,.85)}
 
-::selection{background:var(--glow);color:var(--void)}
-::-webkit-scrollbar{width:10px}
-::-webkit-scrollbar-track{background:var(--void-2)}
-::-webkit-scrollbar-thumb{background:var(--glow-deep);border-left:1px solid var(--glow-dim)}
-::-webkit-scrollbar-thumb:hover{background:var(--glow-dim)}
+::selection{background:var(--cyan);color:var(--void)}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#000}
+::-webkit-scrollbar-thumb{background:var(--cyan-deep)}
+::-webkit-scrollbar-thumb:hover{background:var(--cyan-dim)}
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
-section{position:relative;padding:clamp(64px,9vw,120px) 0;scroll-margin-top:120px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+section{position:relative;padding:clamp(70px,10vw,140px) 0;scroll-margin-top:110px}
 
-/* ---------- shared furniture ---------- */
-.hairline{height:1px;background:linear-gradient(90deg,transparent,var(--glow-dim) 20%,var(--glow) 50%,var(--glow-dim) 80%,transparent);opacity:.6}
-.kicker{display:inline-block;font-family:var(--serif);font-weight:600;letter-spacing:.4em;text-transform:uppercase;
-  font-size:.72rem;color:var(--glow);padding:6px 0 4px;position:relative}
-.kicker::before,.kicker::after{content:"";display:inline-block;width:26px;height:1px;background:var(--glow);vertical-align:middle;opacity:.7;margin:0 12px 4px}
-.head{display:flex;flex-direction:column;gap:16px;margin-bottom:44px}
-h2.sect{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.02em;
-  font-size:clamp(2.4rem,7.4vw,4.8rem);line-height:.9;color:var(--bone);
-  text-shadow:0 0 32px rgba(46,233,228,.28)}
-h2.sect .glow{color:var(--glow);text-shadow:0 0 22px rgba(46,233,228,.6),0 0 44px rgba(46,233,228,.25)}
+/* shared bits */
+.rule{height:1px;width:100%;background:linear-gradient(90deg,transparent,var(--edge-hi) 20%,var(--cyan-dim) 50%,var(--edge-hi) 80%,transparent);opacity:.5}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-weight:400;letter-spacing:.35em;
+  text-transform:uppercase;font-size:.66rem;color:var(--ash)}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--cyan);opacity:.7}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::after{content:"";width:32px;height:1px;background:var(--cyan);opacity:.7}
 
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  font-size:.78rem;padding:14px 26px;background:transparent;color:var(--glow);border:1px solid var(--glow);
-  text-decoration:none;transition:.2s;cursor:pointer;position:relative;overflow:hidden}
-.btn::before{content:"";position:absolute;inset:0;background:var(--glow);opacity:0;transition:.25s}
-.btn:hover{color:var(--void);box-shadow:0 0 28px rgba(46,233,228,.55)}
-.btn:hover::before{opacity:1}
-.btn span{position:relative;z-index:2}
-.btn.ghost{color:var(--ash);border-color:var(--ash-dim)}
-.btn.ghost::before{background:var(--ash)}
-.btn.ghost:hover{color:var(--void);box-shadow:0 0 24px rgba(147,169,170,.35)}
+h2.sect{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.005em;
+  font-size:clamp(2.6rem,7.6vw,5rem);line-height:.88;color:var(--bone);margin-top:14px}
+
+.btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;font-size:.72rem;padding:15px 26px;background:var(--cyan);color:var(--void);
+  border:1px solid var(--cyan);text-decoration:none;transition:.2s;cursor:pointer}
+.btn:hover{background:var(--cyan-hot);border-color:var(--cyan-hot);box-shadow:0 0 24px rgba(60,238,234,.5)}
+.btn.ghost{background:transparent;color:var(--bone);border-color:var(--edge-hi)}
+.btn.ghost:hover{background:transparent;color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 22px rgba(60,238,234,.25)}
+.btn .arr{font-family:var(--mono);font-weight:400}
 
 /* ===================== TOP STRIP ===================== */
-.topstrip{background:var(--void);color:var(--ash);font-family:var(--mono);letter-spacing:.24em;
-  text-transform:uppercase;font-size:.62rem;display:flex;justify-content:space-between;align-items:center;
-  padding:8px 26px;position:relative;z-index:101;border-bottom:1px solid var(--edge)}
-.topstrip .haz{flex:1;height:1px;margin:0 22px;background:linear-gradient(90deg,transparent,var(--glow-dim),var(--glow),var(--glow-dim),transparent);opacity:.7}
-.topstrip span{white-space:nowrap;color:var(--glow-dim)}
+.topstrip{background:var(--void);color:var(--ash-dim);font-family:var(--mono);letter-spacing:.28em;
+  text-transform:uppercase;font-size:.6rem;display:flex;justify-content:space-between;align-items:center;
+  padding:9px 32px;position:relative;z-index:101;border-bottom:1px solid var(--edge)}
+.topstrip .l,.topstrip .r{white-space:nowrap}
+.topstrip .l{color:var(--cyan);opacity:.85}
 
 /* ===================== NAV ===================== */
-nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--edge);display:flex;align-items:center;justify-content:space-between;padding:14px 26px}
-.brand{font-family:var(--display);font-weight:400;letter-spacing:.06em;font-size:1.55rem;color:var(--bone);
-  text-decoration:none;text-transform:uppercase;line-height:1;
-  text-shadow:0 0 14px rgba(46,233,228,.5),0 0 2px rgba(46,233,228,.7)}
-.brand b{color:var(--glow);font-weight:400}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-family:var(--serif);font-weight:600;letter-spacing:.24em;text-transform:uppercase;
-  font-size:.72rem;color:var(--ash);text-decoration:none;transition:.2s;position:relative;padding:4px 0}
-.nav-links a:not(.btn):hover{color:var(--glow);text-shadow:0 0 12px rgba(46,233,228,.55)}
-.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--glow);transition:.25s;box-shadow:0 0 8px var(--glow)}
+nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--edge);display:flex;align-items:center;justify-content:space-between;padding:16px 32px}
+.brand{font-family:var(--display);font-weight:400;letter-spacing:.05em;font-size:1.5rem;color:var(--bone);
+  text-decoration:none;text-transform:uppercase;line-height:1}
+.brand b{color:var(--cyan);font-weight:400}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-family:var(--mono);font-weight:400;letter-spacing:.24em;text-transform:uppercase;
+  font-size:.66rem;color:var(--ash);text-decoration:none;transition:.2s;position:relative;padding:6px 0}
+.nav-links a:not(.btn):hover{color:var(--cyan)}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--cyan);transition:.25s}
 .nav-links a:not(.btn):hover::after{width:100%}
-.nav-links .btn{font-size:.68rem;padding:9px 18px}
-.menu-toggle{display:none;background:transparent;color:var(--glow);border:1px solid var(--glow-dim);
+.nav-links .btn{font-size:.6rem;padding:10px 18px;letter-spacing:.24em}
+.menu-toggle{display:none;background:transparent;color:var(--cyan);border:1px solid var(--edge-hi);
   font-size:1.2rem;cursor:pointer;width:42px;height:42px;line-height:1}
 
 /* ===================== HERO — COUNTDOWN TEASE ===================== */
-.hero{padding:clamp(70px,10vw,140px) 0 clamp(70px,10vw,130px);position:relative;overflow:hidden}
+.hero{min-height:calc(100vh - 92px);display:flex;align-items:center;padding:60px 0;position:relative;overflow:hidden}
+/* single cyan halo, low and centered */
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(circle at 50% 22%, rgba(46,233,228,.32), transparent 45%),
-    radial-gradient(circle at 12% 78%, rgba(74,30,117,.32), transparent 50%),
-    radial-gradient(circle at 88% 68%, rgba(247,168,58,.11), transparent 45%),
-    radial-gradient(circle at 88% 20%, rgba(46,233,228,.10), transparent 40%)}
-.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.34;
-  background-image:
-    repeating-linear-gradient(0deg, transparent 0 6px, rgba(46,233,228,.05) 6px 7px),
-    repeating-linear-gradient(90deg, transparent 0 6px, rgba(46,233,228,.05) 6px 7px);
-  mask-image:radial-gradient(ellipse at center, black 30%, transparent 78%)}
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(60,238,234,.18), transparent 70%),
+    radial-gradient(ellipse 80% 30% at 50% 100%, rgba(60,238,234,.10), transparent 70%)}
+.tease{position:relative;z-index:2;width:100%;text-align:center;max-width:1100px;margin:0 auto}
 
-/* Stone-crack decorative overlay in hero corners */
-.cracks{position:absolute;pointer-events:none;color:var(--glow);opacity:.35;z-index:1;
-  filter:drop-shadow(0 0 8px rgba(46,233,228,.35))}
-.cracks svg{width:100%;height:auto;display:block}
-.cracks.tl{top:0;left:0;width:min(340px,42vw)}
-.cracks.br{bottom:0;right:0;width:min(380px,45vw);transform:scale(-1,-1)}
+.tease .eyebrow{margin-bottom:44px}
 
-/* Ancient glyph plate — big carved-tablet slab, decorative */
-.plate{position:absolute;pointer-events:none;opacity:.14;color:var(--glow);z-index:0;
-  filter:drop-shadow(0 0 8px rgba(46,233,228,.4))}
-.plate.left{top:22%;left:-40px;width:min(220px,22vw);transform:rotate(-6deg)}
-.plate.right{bottom:12%;right:-30px;width:min(240px,24vw);transform:rotate(4deg)}
-.plate svg{width:100%;height:auto;display:block}
-.tease{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
+.tease h1{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.86;letter-spacing:-.01em;
+  font-size:clamp(3.2rem,10vw,6.4rem);color:var(--bone);margin:0 auto 22px;max-width:14ch}
+.tease h1 em{font-style:normal;color:var(--cyan)}
 
-/* Winged deity watermark behind the tease copy */
-.angel-bg{position:absolute;top:2%;left:50%;transform:translateX(-50%);width:min(820px,96vw);
-  color:var(--glow);pointer-events:none;opacity:.13;z-index:1;
-  filter:drop-shadow(0 0 26px rgba(46,233,228,.55));animation:angel-breathe 7s ease-in-out infinite}
-.angel-bg svg{width:100%;height:auto;display:block}
-@keyframes angel-breathe{
-  0%,100%{opacity:.11;filter:drop-shadow(0 0 18px rgba(46,233,228,.45))}
-  50%{opacity:.17;filter:drop-shadow(0 0 40px rgba(46,233,228,.75)) drop-shadow(0 0 70px rgba(74,30,117,.4))}
-}
+.tease .lede{font-family:var(--body);font-weight:300;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--ash);
+  max-width:36ch;margin:0 auto 60px;line-height:1.5}
+.tease .lede em{color:var(--bone);font-style:normal;font-weight:400}
 
-/* Cuneiform glyph strips (top mark + countdown flankers) */
-.glyphs{display:block;width:100%;max-width:360px;margin:0 auto 22px;color:var(--glow);opacity:.85;
-  filter:drop-shadow(0 0 6px rgba(46,233,228,.55))}
-.glyphs.wide{max-width:520px}
-.glyphs.tight{margin:0 auto 14px;max-width:280px}
-.glyphs svg{width:100%;height:auto;display:block}
-.tease .kicker{color:var(--glow);margin-bottom:26px}
-.tease h1{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.82;letter-spacing:.01em;
-  font-size:clamp(3.4rem,11vw,7.2rem);color:var(--bone);margin:0 0 22px;position:relative;z-index:2;
-  text-shadow:0 0 42px rgba(46,233,228,.55),0 0 8px rgba(46,233,228,.75),0 2px 0 rgba(247,168,58,.18)}
-.tease .tagline{font-family:var(--serif);font-weight:400;letter-spacing:.3em;text-transform:uppercase;
-  font-size:clamp(.78rem,1.4vw,.95rem);color:var(--ash);margin:0 auto 42px;max-width:620px}
-.tease .tagline b{color:var(--glow);font-weight:600;letter-spacing:.32em}
+/* Countdown */
+.countdown{display:inline-flex;align-items:flex-end;gap:clamp(10px,2.4vw,32px);margin:0 auto 44px;position:relative}
+.countdown .unit{display:flex;flex-direction:column;align-items:center;min-width:clamp(60px,11vw,120px)}
+.countdown .num{font-family:var(--mono);font-weight:700;font-size:clamp(3rem,9vw,6.4rem);line-height:1;
+  color:var(--bone);font-variant-numeric:tabular-nums;letter-spacing:-.02em;
+  text-shadow:0 0 22px rgba(60,238,234,.4)}
+.countdown .lbl{font-family:var(--mono);font-weight:400;letter-spacing:.32em;text-transform:uppercase;
+  font-size:.6rem;color:var(--ash-dim);margin-top:16px}
+.countdown .sep{font-family:var(--mono);font-weight:400;font-size:clamp(2.4rem,7vw,5rem);line-height:1;
+  color:var(--cyan);align-self:center;transform:translateY(-14px);
+  animation:cd-blink 2s ease-in-out infinite;padding:0 2px}
+@keyframes cd-blink{0%,100%{opacity:.85}50%{opacity:.35}}
 
-.countdown{display:inline-flex;align-items:flex-start;gap:clamp(6px,1.6vw,18px);margin:0 auto 44px;
-  padding:26px clamp(18px,3vw,38px);border:1px solid var(--edge);background:rgba(6,10,11,.62);
-  position:relative;animation:cd-pulse 5s ease-in-out infinite}
-@keyframes cd-pulse{
-  0%,100%{box-shadow:0 0 50px rgba(46,233,228,.10), inset 0 0 40px rgba(46,233,228,.04)}
-  50%{box-shadow:0 0 90px rgba(46,233,228,.22), inset 0 0 55px rgba(46,233,228,.08), 0 0 40px rgba(247,168,58,.12)}
-}
-.countdown::before,.countdown::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--glow);opacity:.85}
-.countdown::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
-.countdown::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
-.countdown .unit{display:flex;flex-direction:column;align-items:center;min-width:clamp(56px,10vw,96px)}
-.countdown .num{font-family:var(--mono);font-weight:700;font-size:clamp(2.2rem,7vw,4.4rem);line-height:1;
-  color:var(--bone);text-shadow:0 0 22px rgba(46,233,228,.55),0 0 40px rgba(46,233,228,.28);font-variant-numeric:tabular-nums}
-.countdown .lbl{font-family:var(--serif);font-weight:600;letter-spacing:.28em;text-transform:uppercase;
-  font-size:.62rem;color:var(--glow-dim);margin-top:10px}
-.countdown .sep{font-family:var(--mono);font-weight:700;font-size:clamp(2.2rem,7vw,4.4rem);line-height:1;
-  color:var(--ember);opacity:.9;text-shadow:0 0 20px rgba(247,168,58,.7),0 0 40px rgba(247,168,58,.3);padding:0 2px;
-  animation:sep-flick 3s ease-in-out infinite}
-@keyframes sep-flick{
-  0%,45%,55%,100%{opacity:.9}
-  50%{opacity:.55}
-}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:0 auto 46px}
 
-.hero .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px}
-
-.release-line{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:.3em;font-size:.72rem;
-  color:var(--ash);margin-top:34px;display:inline-flex;align-items:center;justify-content:center;gap:14px;
-  padding:10px 20px;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
-.release-line b{color:var(--ember);font-weight:700;letter-spacing:.24em;
-  text-shadow:0 0 12px rgba(247,168,58,.5)}
-.release-line .dot{display:inline-block;width:6px;height:6px;background:var(--ember);border-radius:50%;
-  box-shadow:0 0 10px var(--ember),0 0 20px rgba(247,168,58,.4)}
+.datebar{display:inline-flex;align-items:center;gap:clamp(14px,3vw,32px);font-family:var(--mono);
+  font-weight:400;letter-spacing:.28em;text-transform:uppercase;font-size:.64rem;color:var(--ash);
+  padding:14px 22px;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
+.datebar .item{display:inline-flex;align-items:center;gap:10px}
+.datebar .k{color:var(--ash-dim)}
+.datebar .v{color:var(--bone)}
+.datebar .v.hot{color:var(--cyan)}
+.datebar .div{color:var(--edge-hi);letter-spacing:0}
 
 /* ===================== FEATURED PLAYER ===================== */
-.player{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);position:relative;overflow:hidden}
-.player::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260' fill='%232ee9e4' fill-opacity='0.04'%3E%3Cpolygon points='16,20 24,20 20,32'/%3E%3Cpolygon points='34,20 42,20 38,32'/%3E%3Cpolygon points='68,24 78,20 78,30'/%3E%3Cpolygon points='104,20 112,20 108,32'/%3E%3Cpolygon points='140,24 150,20 150,30'/%3E%3Cpolygon points='176,20 184,20 180,32'/%3E%3Cpolygon points='216,20 224,20 220,32' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='24,70 32,70 28,82'/%3E%3Cpolygon points='58,74 68,70 68,80'/%3E%3Cpolygon points='94,70 102,70 98,82'/%3E%3Cpolygon points='134,74 144,70 144,80'/%3E%3Cpolygon points='170,70 178,70 174,82'/%3E%3Cpolygon points='204,70 212,70 208,82'/%3E%3Cpolygon points='14,120 22,120 18,132'/%3E%3Cpolygon points='52,124 62,120 62,130'/%3E%3Cpolygon points='88,120 96,120 92,132'/%3E%3Cpolygon points='128,120 136,120 132,132'/%3E%3Cpolygon points='166,124 176,120 176,130' fill='%23f7a83a' fill-opacity='0.45'/%3E%3Cpolygon points='200,120 208,120 204,132'/%3E%3Cpolygon points='234,120 242,120 238,132'/%3E%3Cpolygon points='22,170 30,170 26,182'/%3E%3Cpolygon points='60,170 68,170 64,182'/%3E%3Cpolygon points='96,174 106,170 106,180'/%3E%3Cpolygon points='132,170 140,170 136,182'/%3E%3Cpolygon points='172,170 180,170 176,182'/%3E%3Cpolygon points='208,174 218,170 218,180'/%3E%3Cpolygon points='14,220 22,220 18,232'/%3E%3Cpolygon points='48,224 58,220 58,230'/%3E%3Cpolygon points='84,220 92,220 88,232'/%3E%3Cpolygon points='124,220 132,220 128,232'/%3E%3Cpolygon points='162,224 172,220 172,230'/%3E%3Cpolygon points='200,220 208,220 204,232'/%3E%3Cpolygon points='236,220 244,220 240,232' fill='%23f7a83a' fill-opacity='0.45'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 78% 50%, rgba(46,233,228,.12), transparent 55%),
-    radial-gradient(ellipse at 22% 20%, rgba(74,30,117,.14), transparent 50%)}
-.player .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(30px,5vw,60px);align-items:center;position:relative;z-index:2}
-.player .kicker{margin-bottom:14px}
-.player h3{font-family:var(--display);text-transform:uppercase;color:var(--bone);font-size:clamp(1.9rem,4vw,3rem);
-  line-height:.94;margin-bottom:14px;text-shadow:0 0 20px rgba(46,233,228,.3)}
-.player h3 b{color:var(--glow);font-weight:400;text-shadow:0 0 22px rgba(46,233,228,.55)}
+.player{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);position:relative}
+.player .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,5vw,64px);align-items:center}
+.player .ptext .eyebrow{margin-bottom:20px}
+.player h3{font-family:var(--display);text-transform:uppercase;color:var(--bone);font-size:clamp(2rem,4vw,3.2rem);
+  line-height:.92;margin-bottom:18px;letter-spacing:-.005em}
+.player h3 em{font-style:normal;color:var(--cyan)}
 .player p{color:var(--ash);font-size:1.02rem;max-width:440px}
-.player .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.player .tags span{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.66rem;letter-spacing:.22em;
-  color:var(--glow);border:1px solid var(--glow-dim);padding:6px 12px}
-.player .tags span:nth-child(2){color:var(--ember);border-color:var(--ember-dim);box-shadow:0 0 12px rgba(247,168,58,.15)}
-.embed-box{background:var(--stone);border:1px solid var(--edge);position:relative;padding:6px}
-.embed-box::before{content:"";position:absolute;inset:-1px;border:1px solid var(--glow);opacity:.35;pointer-events:none}
-.embed-box iframe{display:block;filter:hue-rotate(150deg) saturate(.9)}
+.player .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.player .tags span{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.6rem;
+  letter-spacing:.24em;color:var(--ash);border:1px solid var(--edge-hi);padding:7px 12px}
+.embed-box{background:var(--stone);border:1px solid var(--edge);position:relative;padding:4px}
+.embed-box iframe{display:block;filter:hue-rotate(160deg) saturate(.85) brightness(.95)}
 
 /* ===================== DISCOGRAPHY ===================== */
-.disco-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px}
+.disco-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:26px;margin-top:44px}
 .release{background:var(--stone);border:1px solid var(--edge);text-decoration:none;color:inherit;
   display:flex;flex-direction:column;transition:.25s;position:relative}
-.release::before{content:"";position:absolute;inset:0;border:1px solid transparent;transition:.25s;pointer-events:none}
-.release:hover{transform:translateY(-4px);border-color:var(--glow-dim);box-shadow:0 12px 40px rgba(46,233,228,.15),0 0 0 1px rgba(46,233,228,.25)}
-.release .cover{position:relative;border-bottom:1px solid var(--edge);overflow:hidden;aspect-ratio:1;background:var(--void)}
-.release .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s;opacity:.85}
+.release:hover{border-color:var(--cyan-dim);transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,238,234,.12)}
+.release .cover{position:relative;overflow:hidden;aspect-ratio:1;background:var(--void)}
+.release .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s;opacity:.9}
 .release:hover .cover img{transform:scale(1.05);opacity:1}
-.release .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.6));pointer-events:none}
-.release .yr{position:absolute;top:10px;right:10px;font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.08em;
-  background:rgba(0,0,0,.7);color:var(--glow);padding:4px 9px;border:1px solid var(--glow-dim);z-index:2}
-.release .body{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column}
-.release .type{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.6rem;letter-spacing:.28em;
-  color:var(--glow);align-self:flex-start}
-.release h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;font-size:1.3rem;line-height:1;margin:12px 0 10px;color:var(--bone)}
-.release .blurb{font-size:.95rem;color:var(--ash);flex:1}
-.release .listen{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.68rem;letter-spacing:.24em;
-  color:var(--glow);margin-top:16px;display:flex;align-items:center;gap:9px}
+.release .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.7));pointer-events:none}
+.release .yr{position:absolute;top:0;right:0;font-family:var(--mono);font-weight:400;font-size:.62rem;letter-spacing:.14em;
+  background:rgba(0,0,0,.7);color:var(--cyan);padding:5px 10px;z-index:2;backdrop-filter:blur(4px)}
+.release .body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column;border-top:1px solid var(--edge)}
+.release .type{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.56rem;letter-spacing:.28em;
+  color:var(--cyan);align-self:flex-start}
+.release h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;font-size:1.3rem;line-height:1;margin:12px 0 10px;color:var(--bone)}
+.release .blurb{font-size:.92rem;color:var(--ash);flex:1;line-height:1.5}
+.release .listen{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.62rem;letter-spacing:.24em;
+  color:var(--cyan);margin-top:18px;display:flex;align-items:center;gap:9px}
 .release .listen::after{content:"→";transition:.25s}
-.release:hover .listen::after{transform:translateX(6px)}
+.release:hover .listen::after{transform:translateX(5px)}
 
 /* ===================== ABOUT ===================== */
-.about{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);position:relative;overflow:hidden}
-.about::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='%232ee9e4' fill-opacity='0.045'%3E%3Cpolygon points='18,22 26,22 22,34'/%3E%3Cpolygon points='36,22 44,22 40,34'/%3E%3Cpolygon points='68,26 78,22 78,32'/%3E%3Cpolygon points='100,22 108,22 104,34'/%3E%3Cpolygon points='134,26 144,22 144,32'/%3E%3Cpolygon points='168,22 176,22 172,34'/%3E%3Cpolygon points='200,22 208,22 204,34' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='24,66 32,66 28,78'/%3E%3Cpolygon points='54,70 64,66 64,76'/%3E%3Cpolygon points='90,66 98,66 94,78'/%3E%3Cpolygon points='124,66 132,66 128,78'/%3E%3Cpolygon points='160,70 170,66 170,76'/%3E%3Cpolygon points='196,66 204,66 200,78'/%3E%3Cpolygon points='14,110 22,110 18,122'/%3E%3Cpolygon points='46,114 56,110 56,120'/%3E%3Cpolygon points='82,110 90,110 86,122'/%3E%3Cpolygon points='114,110 122,110 118,122' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='148,114 158,110 158,120'/%3E%3Cpolygon points='184,110 192,110 188,122'/%3E%3Cpolygon points='216,110 224,110 220,122'/%3E%3Cpolygon points='22,158 30,158 26,170'/%3E%3Cpolygon points='56,158 64,158 60,170'/%3E%3Cpolygon points='90,162 100,158 100,168'/%3E%3Cpolygon points='128,158 136,158 132,170'/%3E%3Cpolygon points='164,158 172,158 168,170'/%3E%3Cpolygon points='198,162 208,158 208,168'/%3E%3Cpolygon points='18,204 26,204 22,216'/%3E%3Cpolygon points='52,208 62,204 62,214'/%3E%3Cpolygon points='88,204 96,204 92,216'/%3E%3Cpolygon points='120,204 128,204 124,216'/%3E%3Cpolygon points='156,208 166,204 166,214' fill='%23f7a83a' fill-opacity='0.45'/%3E%3Cpolygon points='190,204 198,204 194,216'/%3E%3Cpolygon points='220,204 228,204 224,216'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 8% 100%, rgba(46,233,228,.11), transparent 55%),
-    radial-gradient(ellipse at 95% 15%, rgba(247,168,58,.05), transparent 45%)}
-.about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(30px,5vw,60px);align-items:start;position:relative;z-index:2}
-.origin{background:var(--stone);border:1px solid var(--edge);padding:0}
-.origin .obar{font-family:var(--serif);font-weight:600;background:transparent;color:var(--glow);padding:14px 22px;
-  font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;border-bottom:1px solid var(--edge);display:block}
-.origin .otext{padding:22px 26px 26px}
-.origin p{margin-bottom:16px;color:var(--ash)}
+.about{background:var(--void-2);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(30px,5vw,64px);align-items:start;margin-top:44px}
+.origin{color:var(--bone)}
+.origin p{margin-bottom:18px;color:var(--ash);font-size:1.04rem;line-height:1.65}
 .origin p:last-child{margin-bottom:0}
-.origin .lead{font-size:1.18rem;color:var(--bone);font-weight:400}
-.origin strong{color:var(--glow);font-weight:600}
-.factfile{background:var(--stone);border:1px solid var(--edge);position:relative}
-.factfile::before{content:"";position:absolute;inset:0;border-left:2px solid var(--glow);opacity:.55;pointer-events:none}
-.factfile .ff-head{font-family:var(--serif);font-weight:600;text-transform:uppercase;letter-spacing:.32em;
-  background:transparent;color:var(--glow);padding:14px 22px;font-size:.72rem;border-bottom:1px solid var(--edge)}
-.factfile dl{padding:22px 24px}
-.factfile dt{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.62rem;letter-spacing:.28em;color:var(--glow-dim);margin-top:18px}
-.factfile dt:first-child{margin-top:0}
-.factfile dd{font-size:1rem;margin-top:5px;color:var(--bone);font-family:var(--body)}
-.factfile dd a{color:var(--glow);text-decoration:none;border-bottom:1px solid var(--glow-dim);transition:.2s}
-.factfile dd a:hover{border-color:var(--glow);text-shadow:0 0 10px rgba(46,233,228,.5)}
+.origin .lead{font-size:1.28rem;color:var(--bone);font-weight:400;line-height:1.5}
+.origin em{font-style:normal;color:var(--cyan)}
+.origin strong{color:var(--bone);font-weight:500}
+
+.factfile{background:var(--stone);border:1px solid var(--edge);padding:26px 28px}
+.factfile .ff-head{font-family:var(--mono);font-weight:400;text-transform:uppercase;letter-spacing:.32em;
+  color:var(--cyan);font-size:.62rem;padding-bottom:16px;border-bottom:1px solid var(--edge);margin-bottom:20px}
+.factfile dl{display:grid;gap:16px}
+.factfile dt{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.58rem;letter-spacing:.26em;color:var(--ash-dim)}
+.factfile dd{font-size:.98rem;margin-top:4px;color:var(--bone);font-family:var(--body)}
+.factfile dd a{color:var(--cyan);text-decoration:none;border-bottom:1px solid var(--cyan-dim)}
+.factfile dd a:hover{border-color:var(--cyan)}
 .collab{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.collab span{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.62rem;letter-spacing:.16em;
-  border:1px solid var(--edge);padding:5px 10px;color:var(--ash)}
+.collab span{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.58rem;letter-spacing:.18em;
+  border:1px solid var(--edge-hi);padding:5px 10px;color:var(--ash)}
 
 /* ===================== PRESS ===================== */
-.subhead{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:1.6rem;
-  margin:10px 0 26px;display:flex;align-items:center;gap:16px;color:var(--bone)}
-.subhead::before{content:"";width:18px;height:18px;border:1px solid var(--glow);transform:rotate(45deg);box-shadow:0 0 12px rgba(46,233,228,.6)}
-.clip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;margin-bottom:58px}
-.clip{background:var(--stone);border:1px solid var(--edge);padding:22px 24px;text-decoration:none;color:inherit;
-  display:flex;flex-direction:column;transition:.25s;position:relative}
-.clip:hover{transform:translateY(-3px);border-color:var(--glow-dim);box-shadow:0 10px 32px rgba(46,233,228,.12)}
-.clip .outlet{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.18rem;line-height:1;color:var(--bone)}
-.clip .what{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.6rem;letter-spacing:.28em;color:var(--glow);margin:8px 0 14px}
-.clip .pull{font-style:italic;font-size:1.02rem;color:var(--ash);flex:1;line-height:1.45}
+.subhead{font-family:var(--mono);font-weight:400;letter-spacing:.32em;font-size:.72rem;text-transform:uppercase;
+  margin:40px 0 24px;color:var(--cyan)}
+.clip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-bottom:36px}
+.clip{background:var(--stone);border:1px solid var(--edge);padding:24px 26px;text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;transition:.2s}
+.clip:hover{border-color:var(--cyan-dim);transform:translateY(-2px)}
+.clip .outlet{font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;font-size:1.2rem;line-height:1;color:var(--bone)}
+.clip .what{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.56rem;letter-spacing:.26em;
+  color:var(--cyan);margin:9px 0 16px}
+.clip .pull{font-style:italic;font-size:1rem;color:var(--ash);flex:1;line-height:1.5}
 .clip .pull::before{content:"\201C"}
 .clip .pull::after{content:"\201D"}
-.clip .go{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.66rem;letter-spacing:.24em;color:var(--glow);
-  margin-top:16px;display:flex;align-items:center;gap:8px}
-.clip .go::after{content:"\2197";transition:.25s}
+.clip .go{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.6rem;letter-spacing:.24em;
+  color:var(--cyan);margin-top:18px;display:flex;align-items:center;gap:8px}
+.clip .go::after{content:"↗";transition:.2s}
 .clip:hover .go::after{transform:translate(3px,-3px)}
 
 /* ===================== LISTEN ===================== */
-.listen{background:var(--void);border-top:1px solid var(--edge);position:relative;overflow:hidden}
-.listen::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200' fill='%232ee9e4' fill-opacity='0.05'%3E%3Cpolygon points='16,18 24,18 20,30'/%3E%3Cpolygon points='48,22 58,18 58,28'/%3E%3Cpolygon points='82,18 90,18 86,30'/%3E%3Cpolygon points='118,22 128,18 128,28'/%3E%3Cpolygon points='152,18 160,18 156,30' fill='%23f7a83a' fill-opacity='0.5'/%3E%3Cpolygon points='184,18 192,18 188,30'/%3E%3Cpolygon points='22,66 30,66 26,78'/%3E%3Cpolygon points='58,66 66,66 62,78'/%3E%3Cpolygon points='92,70 102,66 102,76'/%3E%3Cpolygon points='128,66 136,66 132,78'/%3E%3Cpolygon points='164,66 172,66 168,78'/%3E%3Cpolygon points='14,114 22,114 18,126'/%3E%3Cpolygon points='46,118 56,114 56,124'/%3E%3Cpolygon points='82,114 90,114 86,126'/%3E%3Cpolygon points='116,114 124,114 120,126'/%3E%3Cpolygon points='150,118 160,114 160,124'/%3E%3Cpolygon points='182,114 190,114 186,126' fill='%23f7a83a' fill-opacity='0.45'/%3E%3Cpolygon points='20,162 28,162 24,174'/%3E%3Cpolygon points='54,162 62,162 58,174'/%3E%3Cpolygon points='88,166 98,162 98,172'/%3E%3Cpolygon points='124,162 132,162 128,174'/%3E%3Cpolygon points='160,162 168,162 164,174'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 50% 100%, rgba(46,233,228,.12), transparent 60%),
-    radial-gradient(ellipse at 15% 0%, rgba(74,30,117,.16), transparent 55%)}
-.platforms{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
-.platforms a{font-family:var(--serif);font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:.76rem;
-  padding:14px 22px;background:transparent;color:var(--bone);border:1px solid var(--edge);text-decoration:none;transition:.2s;position:relative}
-.platforms a:hover{color:var(--glow);border-color:var(--glow);box-shadow:0 0 24px rgba(46,233,228,.3);transform:translateY(-2px)}
+.listen{background:var(--void);border-top:1px solid var(--edge)}
+.platforms{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.platforms a{font-family:var(--mono);font-weight:400;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;
+  padding:14px 20px;background:transparent;color:var(--bone);border:1px solid var(--edge);text-decoration:none;transition:.2s}
+.platforms a:hover{color:var(--cyan);border-color:var(--cyan)}
 
 /* ===================== FOOTER ===================== */
-footer{background:var(--void);border-top:1px solid var(--edge);padding:54px 0 46px;text-align:center;position:relative}
-footer::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(400px,80%);height:1px;
-  background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:.6}
-.fbrand{font-family:var(--display);text-transform:uppercase;font-size:2.2rem;letter-spacing:.06em;color:var(--bone);
-  text-shadow:0 0 18px rgba(46,233,228,.4),0 0 3px rgba(46,233,228,.6)}
-.fbrand b{color:var(--glow)}
-.socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 22px}
-.socials a{font-family:var(--serif);font-weight:600;text-transform:uppercase;font-size:.68rem;letter-spacing:.2em;
-  padding:9px 15px;border:1px solid var(--edge);color:var(--ash);text-decoration:none;background:transparent;transition:.2s}
-.socials a:hover{background:transparent;color:var(--glow);border-color:var(--glow);box-shadow:0 0 18px rgba(46,233,228,.28)}
-.markline{height:1px;width:180px;margin:12px auto 16px;background:linear-gradient(90deg,transparent,var(--glow-dim),var(--glow),var(--glow-dim),transparent);opacity:.7}
-footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62rem;letter-spacing:.24em;color:var(--ash-dim)}
+footer{background:var(--void);border-top:1px solid var(--edge);padding:60px 0 44px;position:relative}
+.foot-grid{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:end;margin-bottom:34px}
+.fbrand{font-family:var(--display);text-transform:uppercase;font-size:2rem;letter-spacing:.03em;color:var(--bone);line-height:1}
+.fbrand b{color:var(--cyan)}
+.fbrand .sub{display:block;font-family:var(--mono);font-weight:400;font-size:.6rem;letter-spacing:.28em;color:var(--ash-dim);margin-top:10px}
+.socials{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.socials a{font-family:var(--mono);font-weight:400;text-transform:uppercase;font-size:.6rem;letter-spacing:.22em;
+  padding:9px 14px;border:1px solid var(--edge);color:var(--ash);text-decoration:none;transition:.2s}
+.socials a:hover{color:var(--cyan);border-color:var(--cyan-dim)}
+footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58rem;letter-spacing:.24em;color:var(--ash-dim);
+  padding-top:24px;border-top:1px solid var(--edge)}
 
 /* reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
 
 /* ===================== RESPONSIVE ===================== */
-@media(max-width:880px){
-  .hero-grid,.player .wrap,.about-grid{grid-template-columns:1fr}
+@media(max-width:900px){
+  .player .wrap,.about-grid,.foot-grid{grid-template-columns:1fr}
+  .socials{justify-content:flex-start}
   .player .ptext{order:2}
-  .nav-links{position:fixed;inset:0 0 0 auto;width:min(80vw,330px);background:var(--void);
-    border-left:1px solid var(--edge);flex-direction:column;justify-content:center;gap:34px;
+  .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--void);
+    border-left:1px solid var(--edge);flex-direction:column;justify-content:center;gap:30px;
     transform:translateX(100%);transition:.35s;z-index:99}
   .nav-links.open{transform:none}
   .menu-toggle{display:block;z-index:100}
-  .countdown{padding:22px 14px}
-  .countdown .sep{padding:0}
+  .countdown{gap:6px}
+  .countdown .sep{transform:translateY(-10px)}
+  .datebar{flex-wrap:wrap;justify-content:center;gap:14px}
 }
-@media(max-width:540px){
-  .topstrip .haz{display:none}
-  .tease .kicker::before,.tease .kicker::after{display:none}
-  .countdown{gap:4px}
-  .countdown .unit{min-width:52px}
-  .countdown .lbl{font-size:.54rem;letter-spacing:.18em}
+@media(max-width:520px){
+  .countdown .unit{min-width:56px}
+  .countdown .lbl{font-size:.5rem;letter-spacing:.22em}
 }
 </style>
 </head>
 <body id="top">
-<div class="grain-fine" aria-hidden="true"></div>
 
 <!-- ===================== TOP STRIP ===================== -->
 <div class="topstrip">
-  <span>Garage Fire Recordings</span>
-  <div class="haz"></div>
-  <span>Indianapolis · Est. 2022</span>
+  <span class="l">Signal · 2026</span>
+  <span class="r">Wizard Tattoo · Indianapolis</span>
 </div>
 
 <!-- ===================== NAV ===================== -->
@@ -378,165 +291,20 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
     <a href="#press">Press</a>
     <a href="#listen">Listen</a>
     <a href="https://wizard-tattoo.myshopify.com/" target="_blank" rel="noopener">Merch</a>
-    <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener" class="btn"><span>Bandcamp</span></a>
+    <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener" class="btn">Bandcamp <span class="arr">↗</span></a>
   </div>
   <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
 </nav>
 
 <!-- ===================== HERO — COUNTDOWN TEASE ===================== -->
 <header class="hero">
-  <!-- Stone-crack overlays -->
-  <div class="cracks tl" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
-      <path d="M0,60 Q40,72 80,58 T160,48 T240,60 T320,52 T400,64" opacity=".7"/>
-      <path d="M-10,110 Q30,120 70,108 T150,115 T230,102 T310,110 T400,100" opacity=".55"/>
-      <path d="M40,0 L48,28 L38,60 L52,92 L42,130 L58,168 L44,210 L60,260" opacity=".55"/>
-      <path d="M180,0 L170,32 L184,66 L172,102 L188,140 L176,180" opacity=".45"/>
-      <path d="M320,0 L330,26 L316,54 L328,86 L318,118 L332,150" opacity=".5"/>
-      <path d="M80,58 L84,80 M120,52 L125,74 M200,55 L206,78 M260,62 L266,84 M340,58 L344,80" opacity=".4"/>
-      <path d="M0,220 Q40,232 88,224 T170,232 T250,220 T330,228 T400,220" opacity=".45"/>
-      <circle cx="48" cy="62" r="1.2" fill="currentColor"/>
-      <circle cx="170" cy="118" r="1.2" fill="currentColor"/>
-      <circle cx="280" cy="52" r="1.2" fill="currentColor"/>
-      <circle cx="330" cy="150" r="1.2" fill="currentColor"/>
-    </svg>
-  </div>
-  <div class="cracks br" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
-      <path d="M0,60 Q40,72 80,58 T160,48 T240,60 T320,52 T400,64" opacity=".7"/>
-      <path d="M-10,150 Q30,140 70,152 T150,145 T230,158 T310,150 T400,160" opacity=".55"/>
-      <path d="M40,0 L48,28 L38,60 L52,92 L42,130 L58,168 L44,210 L60,260" opacity=".55"/>
-      <path d="M220,0 L212,32 L226,66 L214,102 L228,140 L216,180 L230,220" opacity=".45"/>
-      <path d="M0,220 Q40,232 88,224 T170,232 T250,220 T330,228 T400,220" opacity=".5"/>
-      <circle cx="88" cy="52" r="1.2" fill="currentColor"/>
-      <circle cx="230" cy="140" r="1.2" fill="currentColor"/>
-      <circle cx="60" cy="200" r="1.2" fill="currentColor"/>
-    </svg>
-  </div>
-
-  <!-- Ancient carved-tablet plates on the sides -->
-  <div class="plate left" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 320" fill="none" stroke="currentColor" stroke-width="1">
-      <rect x="6" y="6" width="208" height="308" stroke-width="1.4"/>
-      <line x1="6" y1="46" x2="214" y2="46" opacity=".55"/>
-      <line x1="6" y1="86" x2="214" y2="86" opacity=".55"/>
-      <line x1="6" y1="126" x2="214" y2="126" opacity=".55"/>
-      <line x1="6" y1="166" x2="214" y2="166" opacity=".55"/>
-      <line x1="6" y1="206" x2="214" y2="206" opacity=".55"/>
-      <line x1="6" y1="246" x2="214" y2="246" opacity=".55"/>
-      <line x1="6" y1="286" x2="214" y2="286" opacity=".55"/>
-      <g fill="currentColor">
-        <polygon points="20,20 28,20 24,32"/><polygon points="36,20 44,20 40,32"/><polygon points="60,24 70,20 70,30"/><polygon points="88,20 96,20 92,32"/><polygon points="112,24 122,20 122,30"/><polygon points="144,20 152,20 148,32"/><polygon points="168,20 176,20 172,32"/><polygon points="196,20 204,20 200,32" fill="%23f7a83a" fill-opacity=".7"/>
-        <polygon points="20,60 28,60 24,72"/><polygon points="44,64 54,60 54,70"/><polygon points="72,60 80,60 76,72"/><polygon points="100,60 108,60 104,72"/><polygon points="124,64 134,60 134,70"/><polygon points="156,60 164,60 160,72"/><polygon points="184,60 192,60 188,72"/>
-        <polygon points="18,100 26,100 22,112"/><polygon points="40,100 48,100 44,112"/><polygon points="66,104 76,100 76,110"/><polygon points="98,100 106,100 102,112"/><polygon points="128,104 138,100 138,110"/><polygon points="160,100 168,100 164,112" fill="%23f7a83a" fill-opacity=".7"/><polygon points="188,100 196,100 192,112"/>
-        <polygon points="24,140 32,140 28,152"/><polygon points="50,144 60,140 60,150"/><polygon points="78,140 86,140 82,152"/><polygon points="108,140 116,140 112,152"/><polygon points="136,144 146,140 146,150"/><polygon points="168,140 176,140 172,152"/><polygon points="196,140 204,140 200,152"/>
-        <polygon points="20,180 28,180 24,192"/><polygon points="46,180 54,180 50,192"/><polygon points="72,184 82,180 82,190"/><polygon points="102,180 110,180 106,192"/><polygon points="128,180 136,180 132,192"/><polygon points="156,184 166,180 166,190"/><polygon points="188,180 196,180 192,192"/>
-        <polygon points="22,220 30,220 26,232"/><polygon points="48,220 56,220 52,232"/><polygon points="76,224 86,220 86,230"/><polygon points="106,220 114,220 110,232" fill="%23f7a83a" fill-opacity=".7"/><polygon points="134,220 142,220 138,232"/><polygon points="160,224 170,220 170,230"/><polygon points="192,220 200,220 196,232"/>
-        <polygon points="18,260 26,260 22,272"/><polygon points="42,260 50,260 46,272"/><polygon points="68,264 78,260 78,270"/><polygon points="98,260 106,260 102,272"/><polygon points="128,260 136,260 132,272"/><polygon points="158,264 168,260 168,270"/><polygon points="188,260 196,260 192,272"/>
-        <polygon points="24,300 32,300 28,312"/><polygon points="50,300 58,300 54,312"/><polygon points="78,304 88,300 88,310"/><polygon points="110,300 118,300 114,312"/><polygon points="140,300 148,300 144,312"/><polygon points="170,304 180,300 180,310" fill="%23f7a83a" fill-opacity=".7"/><polygon points="200,300 208,300 204,312"/>
-      </g>
-    </svg>
-  </div>
-  <div class="plate right" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 320" fill="none" stroke="currentColor" stroke-width="1">
-      <rect x="6" y="6" width="208" height="308" stroke-width="1.4"/>
-      <line x1="6" y1="46" x2="214" y2="46" opacity=".55"/>
-      <line x1="6" y1="86" x2="214" y2="86" opacity=".55"/>
-      <line x1="6" y1="126" x2="214" y2="126" opacity=".55"/>
-      <line x1="6" y1="166" x2="214" y2="166" opacity=".55"/>
-      <line x1="6" y1="206" x2="214" y2="206" opacity=".55"/>
-      <line x1="6" y1="246" x2="214" y2="246" opacity=".55"/>
-      <line x1="6" y1="286" x2="214" y2="286" opacity=".55"/>
-      <g fill="currentColor">
-        <polygon points="20,20 28,20 24,32" fill="%23f7a83a" fill-opacity=".7"/><polygon points="44,24 54,20 54,30"/><polygon points="76,20 84,20 80,32"/><polygon points="108,20 116,20 112,32"/><polygon points="136,24 146,20 146,30"/><polygon points="168,20 176,20 172,32"/><polygon points="196,20 204,20 200,32"/>
-        <polygon points="16,60 24,60 20,72"/><polygon points="40,60 48,60 44,72"/><polygon points="66,64 76,60 76,70"/><polygon points="96,60 104,60 100,72"/><polygon points="124,60 132,60 128,72"/><polygon points="152,64 162,60 162,70"/><polygon points="184,60 192,60 188,72"/>
-        <polygon points="22,100 30,100 26,112"/><polygon points="48,104 58,100 58,110"/><polygon points="78,100 86,100 82,112"/><polygon points="108,100 116,100 112,112"/><polygon points="136,100 144,100 140,112" fill="%23f7a83a" fill-opacity=".7"/><polygon points="164,104 174,100 174,110"/><polygon points="196,100 204,100 200,112"/>
-        <polygon points="18,140 26,140 22,152"/><polygon points="44,140 52,140 48,152"/><polygon points="70,144 80,140 80,150"/><polygon points="100,140 108,140 104,152"/><polygon points="128,140 136,140 132,152"/><polygon points="156,144 166,140 166,150"/><polygon points="188,140 196,140 192,152"/>
-        <polygon points="24,180 32,180 28,192"/><polygon points="50,180 58,180 54,192"/><polygon points="76,184 86,180 86,190"/><polygon points="106,180 114,180 110,192"/><polygon points="134,180 142,180 138,192"/><polygon points="164,184 174,180 174,190"/><polygon points="196,180 204,180 200,192" fill="%23f7a83a" fill-opacity=".7"/>
-        <polygon points="18,220 26,220 22,232"/><polygon points="42,220 50,220 46,232"/><polygon points="68,224 78,220 78,230"/><polygon points="98,220 106,220 102,232"/><polygon points="128,220 136,220 132,232"/><polygon points="158,224 168,220 168,230"/><polygon points="188,220 196,220 192,232"/>
-        <polygon points="22,260 30,260 26,272"/><polygon points="48,260 56,260 52,272"/><polygon points="74,264 84,260 84,270"/><polygon points="104,260 112,260 108,272" fill="%23f7a83a" fill-opacity=".7"/><polygon points="132,260 140,260 136,272"/><polygon points="160,264 170,260 170,270"/><polygon points="192,260 200,260 196,272"/>
-        <polygon points="18,300 26,300 22,312"/><polygon points="44,300 52,300 48,312"/><polygon points="70,304 80,300 80,310"/><polygon points="100,300 108,300 104,312"/><polygon points="130,300 138,300 134,312"/><polygon points="160,304 170,300 170,310"/><polygon points="192,300 200,300 196,312"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- Winged deity watermark (echo of the cover, not the cover itself) -->
-  <div class="angel-bg" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <g stroke-width="1.2">
-        <!-- Halo / sun disc -->
-        <circle cx="400" cy="150" r="34" stroke-width="1.4"/>
-        <circle cx="400" cy="150" r="48" opacity=".35"/>
-        <circle cx="400" cy="150" r="16" fill="currentColor" opacity=".55"/>
-        <path d="M400,116 L400,100 M366,150 L350,150 M434,150 L450,150 M377,127 L367,117 M423,127 L433,117 M377,173 L367,183 M423,173 L433,183" opacity=".7"/>
-        <!-- Face -->
-        <line x1="392" y1="146" x2="392" y2="154"/>
-        <line x1="408" y1="146" x2="408" y2="154"/>
-        <path d="M394,162 Q400,166 406,162"/>
-        <!-- Left wing arches -->
-        <path d="M400,200 C355,190 285,165 205,145 C170,145 135,158 100,180" stroke-width="1.4"/>
-        <path d="M400,205 C360,215 285,225 205,225 C170,225 135,238 100,255" stroke-width="1.2"/>
-        <path d="M400,215 C355,230 305,255 265,285" stroke-width="1.1"/>
-        <!-- Left wing feathers -->
-        <path d="M115,182 L125,160 M148,172 L157,148 M182,162 L192,138 M216,155 L226,131 M250,150 L260,126 M284,148 L294,124 M318,150 L328,126 M352,156 L360,134 M382,170 L388,152"/>
-        <path d="M118,240 L128,220 M152,230 L162,210 M186,225 L196,205 M220,220 L230,200 M254,220 L264,200 M288,225 L298,205 M322,232 L332,212 M356,240 L366,220"/>
-        <path d="M180,278 L188,262 M215,270 L223,254 M250,266 L258,250 M285,268 L293,252 M320,272 L328,256 M355,278 L363,262"/>
-        <!-- Right wing arches -->
-        <path d="M400,200 C445,190 515,165 595,145 C630,145 665,158 700,180" stroke-width="1.4"/>
-        <path d="M400,205 C440,215 515,225 595,225 C630,225 665,238 700,255" stroke-width="1.2"/>
-        <path d="M400,215 C445,230 495,255 535,285" stroke-width="1.1"/>
-        <!-- Right wing feathers -->
-        <path d="M685,182 L675,160 M652,172 L643,148 M618,162 L608,138 M584,155 L574,131 M550,150 L540,126 M516,148 L506,124 M482,150 L472,126 M448,156 L440,134 M418,170 L412,152"/>
-        <path d="M682,240 L672,220 M648,230 L638,210 M614,225 L604,205 M580,220 L570,200 M546,220 L536,200 M512,225 L502,205 M478,232 L468,212 M444,240 L434,220"/>
-        <path d="M620,278 L612,262 M585,270 L577,254 M550,266 L542,250 M515,268 L507,252 M480,272 L472,256 M445,278 L437,262"/>
-        <!-- Body / robe -->
-        <path d="M400,205 L370,320 L400,410 L430,320 Z" stroke-width="1.3"/>
-        <path d="M370,320 L338,395 L358,415 M430,320 L462,395 L442,415"/>
-        <line x1="400" y1="205" x2="400" y2="410" opacity=".5"/>
-        <path d="M382,247 L418,247 M378,275 L422,275 M374,305 L426,305 M370,338 L430,338" opacity=".7"/>
-        <path d="M395,410 L385,438 M405,410 L415,438"/>
-        <!-- Hands -->
-        <path d="M358,298 L340,315 M442,298 L460,315" opacity=".85"/>
-      </g>
-    </svg>
-  </div>
-
   <div class="wrap">
     <div class="tease">
-      <!-- Top glyph strip in place of the old diamond sigil -->
-      <div class="glyphs tight reveal" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 22" fill="currentColor">
-          <polygon points="10,3 17,3 13.5,13"/><polygon points="21,3 28,3 24.5,13"/>
-          <polygon points="45,7 52,3 52,11"/><polygon points="58,3 65,3 61.5,13"/>
-          <polygon points="82,3 89,3 85.5,13"/><polygon points="93,3 100,3 96.5,13"/><polygon points="87,15 94,15 90.5,21"/>
-          <polygon points="122,3 129,3 125.5,13" fill="#f7a83a"/><polygon points="133,7 140,3 140,11" fill="#f7a83a"/>
-          <polygon points="162,3 169,3 165.5,13"/><polygon points="173,3 180,3 176.5,13"/>
-          <polygon points="202,7 209,3 209,11"/><polygon points="215,3 222,3 218.5,13"/><polygon points="210,15 217,15 213.5,21"/>
-          <polygon points="245,3 252,3 248.5,13"/><polygon points="256,7 263,3 263,11"/>
-        </svg>
-      </div>
+      <span class="eyebrow center reveal">Transmission · Incoming</span>
 
-      <span class="kicker reveal">Incoming Transmission</span>
-      <h1 class="reveal">The Next<br>Chapter</h1>
-      <p class="tagline reveal">The announcement arrives <b>08 · 07 · 2026</b></p>
+      <h1 class="reveal">The next <em>chapter</em> arrives</h1>
 
-      <!-- Glyph strip above countdown -->
-      <div class="glyphs wide reveal" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 22" fill="currentColor">
-          <polygon points="10,3 17,3 13.5,13"/><polygon points="21,3 28,3 24.5,13"/>
-          <polygon points="45,7 52,3 52,11"/><polygon points="58,3 65,3 61.5,13"/><polygon points="52,15 59,15 55.5,21"/>
-          <polygon points="90,3 97,3 93.5,13"/><polygon points="101,3 108,3 104.5,13"/><polygon points="112,3 119,3 115.5,13"/>
-          <polygon points="140,7 147,3 147,11"/><polygon points="153,7 160,3 160,11"/>
-          <polygon points="182,3 189,3 185.5,13" fill="#f7a83a"/><polygon points="193,3 200,3 196.5,13" fill="#f7a83a"/><polygon points="187,15 194,15 190.5,21" fill="#f7a83a"/>
-          <polygon points="228,3 235,3 231.5,13"/><polygon points="239,7 246,3 246,11"/>
-          <polygon points="270,3 277,3 273.5,13"/><polygon points="281,3 288,3 284.5,13"/>
-          <polygon points="312,7 319,3 319,11"/><polygon points="325,3 332,3 328.5,13"/><polygon points="320,15 327,15 323.5,21"/>
-          <polygon points="358,3 365,3 361.5,13"/><polygon points="369,3 376,3 372.5,13"/>
-          <polygon points="398,7 405,3 405,11"/><polygon points="411,3 418,3 414.5,13"/>
-          <polygon points="442,3 449,3 445.5,13" fill="#f7a83a"/><polygon points="453,7 460,3 460,11" fill="#f7a83a"/>
-          <polygon points="482,3 489,3 485.5,13"/><polygon points="493,3 500,3 496.5,13"/><polygon points="487,15 494,15 490.5,21"/>
-        </svg>
-      </div>
+      <p class="lede reveal">A new record from Wizard Tattoo. The signal opens <em>August 7</em>.</p>
 
       <div class="countdown reveal" id="countdown" role="timer" aria-live="polite" aria-label="Time until announcement">
         <div class="unit"><span class="num" data-cd="d">--</span><span class="lbl">Days</span></div>
@@ -549,15 +317,15 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
       </div>
 
       <div class="cta-row reveal">
-        <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener" class="btn"><span>Follow on Bandcamp</span></a>
-        <a href="#releases" class="btn ghost"><span>The Discography</span></a>
+        <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener" class="btn">Follow on Bandcamp <span class="arr">↗</span></a>
+        <a href="#releases" class="btn ghost">The Discography</a>
       </div>
 
-      <p class="release-line reveal">
-        <span class="dot"></span>
-        Full record arrives <b>10 · 02 · 2026</b>
-        <span class="dot"></span>
-      </p>
+      <div class="datebar reveal">
+        <span class="item"><span class="k">Announcement</span> <span class="v hot">08.07.2026</span></span>
+        <span class="div">·</span>
+        <span class="item"><span class="k">Album</span> <span class="v">10.02.2026</span></span>
+      </div>
     </div>
   </div>
 </header>
@@ -566,13 +334,13 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 <section class="player" id="featured">
   <div class="wrap">
     <div class="ptext reveal">
-      <span class="kicker">Now Playing · 2024</span>
-      <h3>Living Just for <b>Knife Fighting</b></h3>
+      <span class="eyebrow">Now Playing · 2024</span>
+      <h3>Living Just for <em>Knife Fighting</em></h3>
       <p>A year of bloodletting forged into one full-length — the <i>Living Just for Dying</i> and <i>One of These Knives</i> EPs, plus three exclusive covers.</p>
       <div class="tags"><span>2 EPs</span><span>+3 Bonus Covers</span><span>11 Tracks</span></div>
     </div>
     <div class="embed-box reveal">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=482833232/size=large/bgcol=0c1214/linkcol=2ee9e4/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://wizardtattoo.bandcamp.com/album/living-just-for-knife-fighting">Living Just For Knife Fighting by Wizard Tattoo</a></iframe>
+      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=482833232/size=large/bgcol=0d1113/linkcol=3ceeea/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://wizardtattoo.bandcamp.com/album/living-just-for-knife-fighting">Living Just For Knife Fighting by Wizard Tattoo</a></iframe>
     </div>
   </div>
 </section>
@@ -581,8 +349,8 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 <section id="releases">
   <div class="wrap">
     <div class="head reveal">
-      <span class="kicker">The Back Issues</span>
-      <h2 class="sect">Disco<span class="glow">graphy</span></h2>
+      <span class="eyebrow">The Back Catalog</span>
+      <h2 class="sect">Discography</h2>
     </div>
     <div class="disco-grid" id="discoGrid"><!-- injected from RELEASES[] --></div>
   </div>
@@ -592,30 +360,26 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 <section class="about" id="about">
   <div class="wrap">
     <div class="head reveal">
-      <span class="kicker">Origin Story</span>
-      <h2 class="sect">The <span class="glow">Bard</span></h2>
+      <span class="eyebrow">The Bard</span>
+      <h2 class="sect">One man, one studio, total control.</h2>
     </div>
     <div class="about-grid">
       <div class="origin reveal">
-        <span class="obar">Meanwhile, in Indianapolis...</span>
-        <div class="otext">
-          <p class="lead">One man, one vision, total control — written, performed, recorded, mixed, and illustrated by Bram the Bard alone.</p>
-          <p><strong>Wizard Tattoo</strong> refuses a single genre, welding doom, stoner rock, progressive metal, psych, jazz and grunge into immersive concept records — worlds you fall into rather than albums you simply hear.</p>
-          <p>Every release threads into a larger tapestry: the <strong>Wizard Tattoo Universe</strong>, a discography-spanning mythology where knife fights, beasts and madmen recur across years of music. Lyrics pull from comics, horror and fantasy; the riffs draw blood.</p>
-          <p>It all starts with a man, a tattoo, and a dark voice in his head — and his long, glorious descent into madness.</p>
-        </div>
+        <p class="lead">Wizard Tattoo is the solo work of multi-instrumentalist <em>Bram the Bard</em> — every riff, vocal, mix, and hand-drawn cover made by one set of hands at Garage Fire Recordings in Indianapolis.</p>
+        <p>The project refuses a single genre, welding doom, stoner rock, progressive metal, psych, jazz and grunge into immersive concept records — worlds you fall into rather than albums you simply hear.</p>
+        <p>Every release threads into a larger tapestry: the <strong>Wizard Tattoo Universe</strong>, a discography-spanning mythology where knife fights, beasts and madmen recur across years of music. Lyrics pull from comics, horror and fantasy; the riffs draw blood.</p>
+        <p>It all starts with a man, a tattoo, and a dark voice in his head — and his long, glorious descent into madness.</p>
       </div>
       <aside class="factfile reveal">
         <div class="ff-head">Fact File</div>
         <dl>
-          <dt>Secret Identity</dt><dd>Bram the Bard</dd>
-          <dt>Base of Operations</dt><dd>Indianapolis, Indiana</dd>
-          <dt>Powers</dt><dd>Doom · Stoner · Prog · Black · Psych</dd>
-          <dt>Affiliation</dt><dd>Garage Fire Recordings</dd>
-          <dt>Known Associates</dt>
-          <dd><div class="collab"><span>Fausto Aurelius</span><span>Djinnifer</span></div></dd>
-          <dt>For Fans Of</dt><dd>Danzig · High on Fire · Kyuss · Mastodon · Primus</dd>
-          <dt>Dispatch</dt><dd><a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener">wizardtattoo.bandcamp.com</a></dd>
+          <div><dt>Identity</dt><dd>Bram the Bard</dd></div>
+          <div><dt>Base</dt><dd>Indianapolis, Indiana</dd></div>
+          <div><dt>Sounds</dt><dd>Doom · Stoner · Prog · Black · Psych</dd></div>
+          <div><dt>Label</dt><dd>Garage Fire Recordings</dd></div>
+          <div><dt>Collaborators</dt><dd><div class="collab"><span>Fausto Aurelius</span><span>Djinnifer</span></div></dd></div>
+          <div><dt>For Fans Of</dt><dd>Danzig · High on Fire · Kyuss · Mastodon · Primus</dd></div>
+          <div><dt>Dispatch</dt><dd><a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener">wizardtattoo.bandcamp.com</a></dd></div>
         </dl>
       </aside>
     </div>
@@ -626,8 +390,8 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 <section id="press">
   <div class="wrap">
     <div class="head reveal">
-      <span class="kicker">Read All About It</span>
-      <h2 class="sect">The <span class="glow">Press</span></h2>
+      <span class="eyebrow">Read All About It</span>
+      <h2 class="sect">Press</h2>
     </div>
 
     <h3 class="subhead reveal">Reviews</h3>
@@ -642,8 +406,8 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 <section class="listen" id="listen">
   <div class="wrap">
     <div class="head reveal">
-      <span class="kicker">Press Play</span>
-      <h2 class="sect">Listen <span class="glow">Up</span></h2>
+      <span class="eyebrow">Press Play</span>
+      <h2 class="sect">Listen Up</h2>
     </div>
     <div class="platforms reveal">
       <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
@@ -659,18 +423,19 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.62r
 <!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="wrap">
-    <div class="fbrand">WIZARD <b>TATTOO</b></div>
-    <div class="socials">
-      <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
-      <a href="https://www.instagram.com/wizardtattooband" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/wizardtattooband" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.threads.net/@wizardtattooband" target="_blank" rel="noopener">Threads</a>
-      <a href="https://bsky.app/profile/wizardtattooband.bsky.social" target="_blank" rel="noopener">Bluesky</a>
-      <a href="https://www.youtube.com/@WizardTattoo" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://wizard-tattoo.myshopify.com/" target="_blank" rel="noopener">Merch</a>
+    <div class="foot-grid">
+      <div class="fbrand">WIZARD <b>TATTOO</b><span class="sub">Garage Fire Recordings · Indianapolis</span></div>
+      <div class="socials">
+        <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+        <a href="https://www.instagram.com/wizardtattooband" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/wizardtattooband" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.threads.net/@wizardtattooband" target="_blank" rel="noopener">Threads</a>
+        <a href="https://bsky.app/profile/wizardtattooband.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a href="https://www.youtube.com/@WizardTattoo" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://wizard-tattoo.myshopify.com/" target="_blank" rel="noopener">Merch</a>
+      </div>
     </div>
-    <div class="markline" aria-hidden="true"></div>
-    <div class="colophon">&copy; <span id="yr"></span> Wizard Tattoo · Garage Fire Recordings · Indianapolis, IN</div>
+    <div class="colophon">&copy; <span id="yr"></span> Wizard Tattoo · All rights reserved</div>
   </div>
 </footer>
 
@@ -781,8 +546,7 @@ links.querySelectorAll('a').forEach(a=> a.onclick = ()=> links.classList.remove(
 
 /* -------- scroll reveal -------- */
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} }),{threshold:.1});
-const obs = ()=> document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
-obs();
+document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 
 /* -------- countdown -------- */
 const cd = {
@@ -796,9 +560,8 @@ function tick(){
   const diff = COUNTDOWN_TARGET - Date.now();
   if(diff <= 0){
     cd.d.textContent = cd.h.textContent = cd.m.textContent = cd.s.textContent = '00';
-    document.querySelector('.tease .tagline').innerHTML = '<b>The transmission has arrived.</b>';
-    const rl = document.querySelector('.release-line');
-    if(rl) rl.innerHTML = '<span class="dot"></span> Full record arrives <b>10 · 02 · 2026</b> <span class="dot"></span>';
+    const lede = document.querySelector('.tease .lede');
+    if(lede) lede.innerHTML = 'The signal is open. <em>The next chapter has arrived.</em>';
     return;
   }
   const sec = Math.floor(diff/1000);
