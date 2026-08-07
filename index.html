@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WIZARD TATTOO — Bram the Bard</title>
-<meta name="description" content="Wizard Tattoo — genre-defying doom, stoner, progressive & psych metal from Indianapolis. The solo project of multi-instrumentalist Bram the Bard. Via Garage Fire Recordings.">
-<meta property="og:title" content="WIZARD TATTOO">
-<meta property="og:description" content="Genre-defying doom / stoner / progressive metal from Indianapolis.">
-<meta property="og:image" content="https://f4.bcbits.com/img/a2002029034_10.jpg">
+<meta name="description" content="Wizard Tattoo — new album WHEN GODS HAD HANDS out October 2, 2026. A progressive blackened doom concept in eight movements. Part I: The Fall streaming now. Preorder via Garage Fire Recordings.">
+<meta property="og:title" content="WIZARD TATTOO — When Gods Had Hands">
+<meta property="og:description" content="New album, out October 2, 2026. A progressive blackened doom concept in eight movements. Part I: The Fall streaming now.">
+<meta property="og:image" content="https://f4.bcbits.com/img/a0632020473_10.jpg">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,13 +130,39 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.86);backdrop-filter
 
 .tease .eyebrow{margin-bottom:32px}
 
-/* Ceremonial sigil — sole ornamental anchor of the hero */
-.sigil{width:min(240px,52vw);height:auto;margin:0 auto 30px;color:var(--cyan);display:block;
+/* Ceremonial sigil — hero crest */
+.sigil{width:min(180px,42vw);height:auto;margin:0 auto 22px;color:var(--cyan);display:block;
   filter:drop-shadow(0 0 14px rgba(53,225,222,.35));animation:sigil-glow 6s ease-in-out infinite}
 .sigil svg{width:100%;height:auto;display:block}
 @keyframes sigil-glow{
   0%,100%{filter:drop-shadow(0 0 12px rgba(53,225,222,.3))}
   50%{filter:drop-shadow(0 0 28px rgba(53,225,222,.65)) drop-shadow(0 0 48px rgba(53,225,222,.22))}
+}
+
+/* Album reveal — cover + copy two-column */
+.album-hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4.5vw,56px);align-items:center;
+  margin:0 auto 44px;max-width:960px;text-align:left}
+.album-art{position:relative;max-width:380px;width:100%;justify-self:center}
+.album-art img{width:100%;display:block;border:1px solid var(--edge-hi);
+  box-shadow:0 24px 60px rgba(0,0,0,.75), 0 0 0 1px rgba(53,225,222,.15), 0 0 42px rgba(53,225,222,.18)}
+.album-art::before,.album-art::after{content:"";position:absolute;width:22px;height:22px;
+  border:1px solid var(--cyan);opacity:.85;pointer-events:none}
+.album-art::before{top:-10px;left:-10px;border-right:0;border-bottom:0}
+.album-art::after{bottom:-10px;right:-10px;border-left:0;border-top:0}
+
+.album-copy h1{font-family:var(--serif);font-weight:900;text-transform:uppercase;line-height:1;
+  letter-spacing:.03em;font-size:clamp(2rem,4.6vw,3.4rem);color:var(--bone-hi);margin:0 0 20px}
+.album-copy .album-sub{font-family:var(--body);font-style:italic;font-size:clamp(1rem,1.4vw,1.14rem);
+  color:var(--bone);line-height:1.55;margin:0 0 16px;max-width:38ch}
+.album-copy .album-credit{font-family:var(--body);font-size:.94rem;color:var(--ash);
+  line-height:1.55;margin:0 0 26px;max-width:40ch}
+.album-copy .album-credit em{color:var(--bone);font-style:normal;font-weight:500}
+.album-copy .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start;margin:0}
+
+@media(max-width:760px){
+  .album-hero{grid-template-columns:1fr;text-align:center;gap:34px}
+  .album-copy .album-sub,.album-copy .album-credit{margin-left:auto;margin-right:auto}
+  .album-copy .cta-row{justify-content:center}
 }
 
 .tease h1{font-family:var(--serif);font-weight:900;text-transform:uppercase;line-height:1.02;letter-spacing:.04em;
@@ -403,13 +429,24 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
         </svg>
       </div>
 
-      <span class="eyebrow center reveal">Transmission · Incoming</span>
+      <span class="eyebrow center reveal">Transmission Received · Preorder Live</span>
 
-      <h1 class="reveal">The next <em>chapter</em> arrives</h1>
+      <div class="album-hero reveal">
+        <a class="album-art" href="https://wizardtattoo.bandcamp.com/album/when-gods-had-hands" target="_blank" rel="noopener" aria-label="When Gods Had Hands cover — preorder on Bandcamp">
+          <img src="https://f4.bcbits.com/img/a0632020473_10.jpg" alt="When Gods Had Hands cover art by Bram the Bard">
+        </a>
+        <div class="album-copy">
+          <h1>When Gods<br>Had Hands</h1>
+          <p class="album-sub">A progressive blackened doom concept in eight movements — <em>Part I: The Fall</em> streaming now.</p>
+          <p class="album-credit">Concept &amp; vocals by <em>Fausto Aurelius</em>. Music, recording &amp; artwork by <em>Bram the Bard</em>. Mixed &amp; mastered at Garage Fire Recordings.</p>
+          <div class="cta-row">
+            <a href="https://wizardtattoo.bandcamp.com/album/when-gods-had-hands" target="_blank" rel="noopener" class="btn">Preorder Now <span class="arr">↗</span></a>
+            <a href="https://wizardtattoo.bandcamp.com/album/when-gods-had-hands" target="_blank" rel="noopener" class="btn ghost">Listen to Part I</a>
+          </div>
+        </div>
+      </div>
 
-      <p class="lede reveal">A new record from Wizard Tattoo. The signal opens <em>August 7</em>.</p>
-
-      <div class="countdown reveal" id="countdown" role="timer" aria-live="polite" aria-label="Time until announcement">
+      <div class="countdown reveal" id="countdown" role="timer" aria-live="polite" aria-label="Time until release">
         <div class="unit"><span class="num" data-cd="d">--</span><span class="lbl">Days</span></div>
         <div class="sep" aria-hidden="true">:</div>
         <div class="unit"><span class="num" data-cd="h">--</span><span class="lbl">Hours</span></div>
@@ -419,15 +456,10 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
         <div class="unit"><span class="num" data-cd="s">--</span><span class="lbl">Seconds</span></div>
       </div>
 
-      <div class="cta-row reveal">
-        <a href="https://wizardtattoo.bandcamp.com" target="_blank" rel="noopener" class="btn">Follow on Bandcamp <span class="arr">↗</span></a>
-        <a href="#releases" class="btn ghost">The Discography</a>
-      </div>
-
       <div class="datebar reveal">
-        <span class="item"><span class="k">Announcement</span> <span class="v hot">08.07.2026</span></span>
+        <span class="item"><span class="k">Preorder</span> <span class="v hot">Live</span></span>
         <span class="div">·</span>
-        <span class="item"><span class="k">Album</span> <span class="v">10.02.2026</span></span>
+        <span class="item"><span class="k">Full Record</span> <span class="v">10.02.2026</span></span>
       </div>
     </div>
   </div>
@@ -437,13 +469,13 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
 <section class="player" id="featured">
   <div class="wrap">
     <div class="ptext reveal">
-      <span class="eyebrow">Now Playing · 2024</span>
-      <h3>Living Just for <em>Knife Fighting</em></h3>
-      <p>A year of bloodletting forged into one full-length — the <i>Living Just for Dying</i> and <i>One of These Knives</i> EPs, plus three exclusive covers.</p>
-      <div class="tags"><span>2 EPs</span><span>+3 Bonus Covers</span><span>11 Tracks</span></div>
+      <span class="eyebrow">First Movement · Now Streaming</span>
+      <h3>Part I · <em>The Fall</em></h3>
+      <p>The opening movement of <i>When Gods Had Hands</i> — a progressive blackened doom concept in eight parts. Preorder is live now for digital, cassette, and CD.</p>
+      <div class="tags"><span>8 Movements</span><span>Concept: Fausto Aurelius</span><span>Out 10.02.2026</span></div>
     </div>
     <div class="embed-box reveal">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=482833232/size=large/bgcol=0d1113/linkcol=3ceeea/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://wizardtattoo.bandcamp.com/album/living-just-for-knife-fighting">Living Just For Knife Fighting by Wizard Tattoo</a></iframe>
+      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3672982753/size=large/bgcol=0d1113/linkcol=35e1de/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://wizardtattoo.bandcamp.com/album/when-gods-had-hands">When Gods Had Hands by Wizard Tattoo</a></iframe>
     </div>
   </div>
 </section>
@@ -557,10 +589,13 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
    =================================================================== */
 const BANDCAMP = "https://wizardtattoo.bandcamp.com";
 
-/* Announcement countdown — midnight Eastern on the reveal day. */
-const COUNTDOWN_TARGET = new Date('2026-08-07T00:00:00-04:00').getTime();
+/* Release countdown — midnight Eastern on the drop day. */
+const COUNTDOWN_TARGET = new Date('2026-10-02T00:00:00-04:00').getTime();
 
 const RELEASES = [
+  { title:"When Gods Had Hands", year:"2026", type:"New · Out Oct 2",
+    blurb:"A progressive blackened doom concept in eight movements. Preorder now — Part I: The Fall streaming.",
+    cover:"https://f4.bcbits.com/img/a0632020473_10.jpg", url:"/album/when-gods-had-hands" },
   { title:"Living Just for Knife Fighting", year:"2024", type:"Full-Length",
     blurb:"Two EPs forged into one, plus three covers — Helmet, Danzig, and Motörhead.",
     cover:"https://f4.bcbits.com/img/a2002029034_10.jpg", url:"/album/living-just-for-knife-fighting" },
@@ -667,8 +702,10 @@ function tick(){
   const diff = COUNTDOWN_TARGET - Date.now();
   if(diff <= 0){
     cd.d.textContent = cd.h.textContent = cd.m.textContent = cd.s.textContent = '00';
-    const lede = document.querySelector('.tease .lede');
-    if(lede) lede.innerHTML = 'The signal is open. <em>The next chapter has arrived.</em>';
+    const sub = document.querySelector('.album-sub');
+    if(sub) sub.innerHTML = '<em>When Gods Had Hands</em> is here. Full record streaming and available on all formats.';
+    const db = document.querySelector('.datebar');
+    if(db) db.innerHTML = '<span class="item"><span class="k">Full Record</span> <span class="v hot">Out Now</span></span>';
     return;
   }
   const sec = Math.floor(diff/1000);
