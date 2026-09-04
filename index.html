@@ -35,9 +35,9 @@ src="https://www.facebook.com/tr?id=799041251478643&ev=PageView&noscript=1"/></n
 <style>
 /* ===================================================================
    WIZARD TATTOO — single-file site
-   Aesthetic: cinematic minimalism. Deep void, single cyan hue, bone
-   typography, monumental scale. Nothing decorative that isn't earning
-   its place. Countdown teaser as the visual anchor.
+   Aesthetic: occult codex. Deep void, single cyan hue, inscribed serif,
+   monumental scale. The Eight Movements strip tracks the album unsealing
+   part by part; everything flips to "unbound" automatically on release day.
    =================================================================== */
 
 :root{
@@ -101,10 +101,10 @@ section{position:relative;padding:clamp(70px,10vw,140px) 0;scroll-margin-top:110
 h2.sect{font-family:var(--serif);font-weight:900;text-transform:uppercase;letter-spacing:.04em;
   font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.02;color:var(--bone-hi);margin-top:16px}
 .head.center{text-align:center;display:flex;flex-direction:column;align-items:center}
-.head .rule-orn{display:inline-flex;align-items:center;gap:14px;color:var(--cyan);opacity:.7}
-.head .rule-orn.top{margin-bottom:20px}
-.head .rule-orn::before,.head .rule-orn::after{content:"";width:52px;height:1px;background:currentColor}
-.head .rule-orn span{width:5px;height:5px;background:currentColor;border-radius:50%;box-shadow:0 0 8px currentColor}
+.rule-orn{display:inline-flex;align-items:center;gap:14px;color:var(--cyan);opacity:.7}
+.rule-orn.top{margin-bottom:20px}
+.rule-orn::before,.rule-orn::after{content:"";width:52px;height:1px;background:currentColor}
+.rule-orn span{width:5px;height:5px;background:currentColor;border-radius:50%;box-shadow:0 0 8px currentColor}
 
 .btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;letter-spacing:.22em;
   text-transform:uppercase;font-size:.72rem;padding:15px 26px;background:var(--cyan);color:var(--void);
@@ -114,19 +114,24 @@ h2.sect{font-family:var(--serif);font-weight:900;text-transform:uppercase;letter
 .btn.ghost:hover{background:transparent;color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 22px rgba(60,238,234,.25)}
 .btn .arr{font-family:var(--mono);font-weight:400}
 
-/* ===================== TOP STRIP ===================== */
-.topstrip{background:var(--void);color:var(--ash-dim);font-family:var(--mono);letter-spacing:.28em;
-  text-transform:uppercase;font-size:.6rem;display:flex;justify-content:space-between;align-items:center;
-  padding:9px 32px;position:relative;z-index:101;border-bottom:1px solid var(--edge)}
-.topstrip .l,.topstrip .r{white-space:nowrap}
-.topstrip .l{color:var(--cyan);opacity:.85}
+/* ===================== TRANSMISSION TICKER ===================== */
+.ticker{background:var(--void);border-bottom:1px solid var(--edge);overflow:hidden;position:relative;z-index:101;
+  height:34px;display:flex;align-items:center}
+.ticker .track{display:flex;white-space:nowrap;animation:ticker 56s linear infinite;will-change:transform}
+.ticker:hover .track{animation-play-state:paused}
+.ticker span{font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ash-dim);
+  padding:0 20px;display:inline-flex;align-items:center;gap:22px}
+.ticker em{font-style:normal;color:var(--cyan)}
+.ticker i{font-style:normal;color:var(--edge-hi)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ===================== NAV ===================== */
 nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.86);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--edge);display:flex;align-items:center;justify-content:space-between;padding:16px 32px}
 .brand{font-family:var(--display);font-weight:400;letter-spacing:.05em;font-size:1.5rem;color:var(--bone);
-  text-decoration:none;text-transform:uppercase;line-height:1}
+  text-decoration:none;text-transform:uppercase;line-height:1;display:inline-flex;align-items:center;gap:12px}
 .brand b{color:var(--cyan);font-weight:400}
+.brand .mark{width:22px;height:22px;color:var(--cyan);flex:none;filter:drop-shadow(0 0 6px rgba(53,225,222,.5))}
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{font-family:var(--mono);font-weight:400;letter-spacing:.24em;text-transform:uppercase;
   font-size:.66rem;color:var(--ash);text-decoration:none;transition:.2s;position:relative;padding:6px 0}
@@ -203,6 +208,39 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.86);backdrop-filter
   color:var(--cyan);align-self:center;transform:translateY(-14px);
   animation:cd-blink 2s ease-in-out infinite;padding:0 2px}
 @keyframes cd-blink{0%,100%{opacity:.85}50%{opacity:.35}}
+
+/* The Eight Movements — codex strip */
+.movements{margin:0 auto 54px;max-width:1040px}
+.mv-head{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:24px}
+.mv-count{font-family:var(--serif);font-weight:600;letter-spacing:.3em;font-size:.78rem;text-transform:uppercase;color:var(--cyan);
+  text-shadow:0 0 14px rgba(53,225,222,.35)}
+.mv-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+.mv{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:22px 8px 18px;
+  border:1px solid var(--edge);background:rgba(12,16,18,.65);text-decoration:none;color:inherit;position:relative;
+  transition:.25s;min-height:150px}
+.mv .n{font-family:var(--serif);font-weight:900;font-size:clamp(1.5rem,2.8vw,2.3rem);line-height:1;color:var(--ash-dim);
+  letter-spacing:.02em;transition:.25s}
+.mv .t{font-family:var(--serif);font-weight:400;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ash-dim);
+  text-align:center;line-height:1.4;transition:.25s}
+.mv .s{font-family:var(--mono);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ash-dim);
+  margin-top:4px;display:inline-flex;align-items:center;gap:7px;transition:.25s}
+.mv .s::before{content:"";width:6px;height:6px;border:1px solid currentColor;border-radius:50%;flex:none}
+/* sealed: a wax-seal glyph — ring with a bar through it */
+.mv.sealed{cursor:default}
+.mv.sealed .s::before{background:linear-gradient(transparent 42%,currentColor 42%,currentColor 58%,transparent 58%)}
+/* unbound: lit */
+.mv.unbound{border-color:var(--cyan-dim);background:rgba(10,63,62,.16)}
+.mv.unbound .n{color:var(--cyan);text-shadow:0 0 18px rgba(53,225,222,.5)}
+.mv.unbound .t{color:var(--bone)}
+.mv.unbound .s{color:var(--cyan)}
+.mv.unbound .s::before{background:currentColor;border-color:transparent;box-shadow:0 0 8px currentColor}
+.mv.unbound:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 10px 30px rgba(53,225,222,.2)}
+.mv.unbound:hover .n{text-shadow:0 0 26px rgba(53,225,222,.8)}
+.mv.latest::after{content:"New";position:absolute;top:7px;right:7px;font-family:var(--mono);font-size:.48rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--void);background:var(--cyan);padding:3px 6px;line-height:1}
+
+.cd-cap{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;
+  color:var(--ash-dim);margin-bottom:18px}
 
 .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:0 auto 46px}
 
@@ -328,23 +366,38 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
   .countdown .sep{transform:translateY(-10px)}
   .datebar{flex-wrap:wrap;justify-content:center;gap:14px}
 }
+@media(max-width:1000px){
+  .mv-grid{grid-template-columns:repeat(4,1fr)}
+}
 @media(max-width:520px){
   .countdown .unit{min-width:56px}
   .countdown .lbl{font-size:.5rem;letter-spacing:.22em}
+  .mv-grid{grid-template-columns:repeat(2,1fr)}
+  .mv{min-height:130px}
+}
+
+/* ===================== REDUCED MOTION ===================== */
+@media(prefers-reduced-motion:reduce){
+  .ticker .track{animation:none}
+  .sigil,.countdown .sep{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  .mv,.release,.clip,.btn{transition:none}
 }
 </style>
 </head>
 <body id="top">
 
-<!-- ===================== TOP STRIP ===================== -->
-<div class="topstrip">
-  <span class="l">Signal · 2026</span>
-  <span class="r">Wizard Tattoo · Indianapolis</span>
+<!-- ===================== TRANSMISSION TICKER ===================== -->
+<div class="ticker" role="marquee" aria-label="Announcements">
+  <div class="track">
+    <span><em>When Gods Had Hands</em> <i>·</i> Out 10.02.2026 <i>·</i> <em>Part VII: Armageddon</em> streaming now <i>·</i> Preorder live <i>·</i> Garage Fire Recordings <i>·</i> Indianapolis <i>·</i></span>
+    <span aria-hidden="true"><em>When Gods Had Hands</em> <i>·</i> Out 10.02.2026 <i>·</i> <em>Part VII: Armageddon</em> streaming now <i>·</i> Preorder live <i>·</i> Garage Fire Recordings <i>·</i> Indianapolis <i>·</i></span>
+  </div>
 </div>
 
 <!-- ===================== NAV ===================== -->
 <nav id="nav">
-  <a href="#top" class="brand">WIZARD <b>TATTOO</b></a>
+  <a href="#top" class="brand"><svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="20" cy="20" r="18"/><circle cx="20" cy="20" r="11" opacity=".6"/><line x1="20" y1="2" x2="20" y2="7"/><line x1="20" y1="33" x2="20" y2="38"/><line x1="2" y1="20" x2="7" y2="20"/><line x1="33" y1="20" x2="38" y2="20"/><circle cx="20" cy="20" r="2.2" fill="currentColor" stroke="none"/></svg>WIZARD <b>TATTOO</b></a>
   <div class="nav-links" id="navLinks">
     <a href="#releases">Releases</a>
     <a href="#about">About</a>
@@ -464,6 +517,17 @@ footer .colophon{font-family:var(--mono);text-transform:uppercase;font-size:.58r
         </div>
       </div>
 
+      <!-- The Eight Movements — rendered from MOVEMENTS[] -->
+      <div class="movements reveal" aria-labelledby="mvCount">
+        <div class="mv-head">
+          <span class="rule-orn" aria-hidden="true"><span></span></span>
+          <span class="eyebrow center">The Eight Movements</span>
+          <span class="mv-count" id="mvCount">— of VIII unbound</span>
+        </div>
+        <div class="mv-grid" id="mvGrid"></div>
+      </div>
+
+      <span class="cd-cap reveal" id="cdCap">The seal breaks in</span>
       <div class="countdown reveal" id="countdown" role="timer" aria-live="polite" aria-label="Time until release">
         <div class="unit"><span class="num" data-cd="d">--</span><span class="lbl">Days</span></div>
         <div class="sep" aria-hidden="true">:</div>
@@ -631,6 +695,20 @@ const RELEASES = [
     cover:"https://f4.bcbits.com/img/a0326144650_10.jpg", url:"/album/wizard-tattoo" }
 ];
 
+/* The Eight Movements. Flip `released:true` as each single drops;
+   `latest:true` on the newest one. Everything auto-flips on release day. */
+const MOVEMENTS = [
+  { n:"I",   title:"The Fall",       released:true  },
+  { n:"II",  title:"Damnation",      released:false },
+  { n:"III", title:"Forgiveness",    released:false },
+  { n:"IV",  title:"Sanctuary",      released:false },
+  { n:"V",   title:"Retribution",    released:false },
+  { n:"VI",  title:"Pact With Evil", released:false },
+  { n:"VII", title:"Armageddon",     released:true, latest:true },
+  { n:"IIX", title:"The Fault",      released:false }
+];
+const ROMAN = ["—","I","II","III","IV","V","VI","VII","VIII"];
+
 const REVIEWS = [
   { outlet:"MetalBite", what:"Living Just for Knife Fighting",
     pull:"A sonic Tarantino flick with all the appropriate swagger.",
@@ -687,6 +765,26 @@ document.getElementById('discoGrid').innerHTML = RELEASES.map(r=>{
     </div></a>`;
 }).join('');
 
+/* -------- render the eight movements -------- */
+function renderMovements(unsealAll){
+  const grid = document.getElementById('mvGrid'), count = document.getElementById('mvCount');
+  let open = 0;
+  grid.innerHTML = MOVEMENTS.map(m=>{
+    const lit = unsealAll || m.released; if(lit) open++;
+    const cls = 'mv ' + (lit ? 'unbound' : 'sealed') + (m.latest && !unsealAll ? ' latest' : '');
+    const status = lit ? 'Streaming' : 'Sealed · 10.02';
+    const inner = `<span class="n">${m.n}</span><span class="t">${m.title}</span><span class="s">${status}</span>`;
+    return lit
+      ? `<a class="${cls}" href="${BANDCAMP}/album/when-gods-had-hands" target="_blank" rel="noopener" aria-label="Part ${m.n}: ${m.title} — streaming now">${inner}</a>`
+      : `<div class="${cls}" aria-label="Part ${m.n}: ${m.title} — sealed until October 2">${inner}</div>`;
+  }).join('');
+  count.textContent = `${ROMAN[open]} of VIII unbound`;
+  grid.querySelectorAll('.mv.unbound').forEach(a => a.addEventListener('click', () => {
+    if(typeof fbq === 'function') fbq('track', 'Lead', { content_name:'When Gods Had Hands', content_category:'movement' });
+  }));
+}
+renderMovements(false);
+
 /* -------- render press clippings -------- */
 function clip(p){
   return `<a class="clip reveal" href="${p.url}" target="_blank" rel="noopener">
@@ -724,6 +822,9 @@ function tick(){
     if(sub) sub.innerHTML = '<em>When Gods Had Hands</em> is here. Full record streaming and available on all formats.';
     const db = document.querySelector('.datebar');
     if(db) db.innerHTML = '<span class="item"><span class="k">Full Record</span> <span class="v hot">Out Now</span></span>';
+    const cap = document.getElementById('cdCap');
+    if(cap) cap.textContent = 'The seal is broken';
+    renderMovements(true);
     return;
   }
   const sec = Math.floor(diff/1000);
